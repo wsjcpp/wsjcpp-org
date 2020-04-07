@@ -14,7 +14,7 @@
     <script src="./mode/cmake/cmake.js"></script>
     <script src="./mode/clike/clike.js"></script>
     <script src="./js/index.js"></script>
-    <title>wsjcpp - yet one c++ source package manager</title>
+    <title>wsjcpp - yet another c++ source package manager</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -74,36 +74,36 @@
         <h1>wsjcpp</h1>
         
         
-        <p>Yet one... C++ Source Package Manager.</p>
+        <p>Yet another... C++ Source Package Manager.</p>
 
-        <h3>features - has implementattion</h3>
+        <h3>features - has implementation</h3>
         <ul>
-            <li>Creating open-source package by anyone (using github only now...)</li>
+            <li>Creating an open-source package by anyone (using github only for now...)</li>
             <li>Manager - one binary application</li>
-            <li>Support: Linux and MacOS</li>
-            <li>Easy install specific versions of source packages to your projects</li>
+            <li>Supports: Linux and MacOS</li>
+            <li>Simple installation of specific versions of source packages into your projects</li>
             <li>Upgrade source packages</li>
-            <li>Hold specific version of source code - so you can fixing modules localle</li>
-            <li>Easy integration to you CMake project</li>
-            <li>Easy start new project (prepared basic struct and files)</li>
-            <li>System for generate files with specific classes</li>
+            <li>Hold specific version of source code - so you can fix modules locally</li>
+            <li>Simple integration into your CMake project</li>
+            <li>Simple start for a new project (prepared basic structures and files)</li>
+            <li>System for generating files with specific classes</li>
             <li>Included unit-tests systems</li>
         </ul>
 
-        <h3>all targets(s) - not any implemented yet</h3>
+        <h3>all goals - not yet implemented</h3>
         <ul>
-            <li>fast create a little microservices based on dockerfile using c++</li>
-            <li>"freezing" sources codes (sometimes need for commercial development)</li>
-            <li>Easy publishing sources packages (github, bitbucket, gitlab, http/https servers)</li>
-            <li>Including helpful tool for generate specific classes (templates or snippets)</li>
-            <li>Including helpful tool for unit-tests</li>
-            <li>Including helpful tool for prepare packages to another systems: deb, brew etc...</li>
-            <li>Including helpful tool for docker image</li>
-            <li>Including helpful tool for build server</li>
-            <li>Including helpful tool with web interface coding, building, managment</li>
-            <li>Including helpful tool for fast start your local "source package registry"</li>
-            <li>Including helpful tool for code analizing</li>
-            <li>Including helpful tool for code docs</li>
+            <li>Fast creation of little microservices based on Dockerfile using C++</li>
+            <li>"Freezing" source codes (sometimes it's necessary for commercial development)</li>
+            <li>Simple publication of sources packages (github, bitbucket, gitlab, http/https servers)</li>
+            <li>Adding helpful tool for generating specific classes (templates or snippets)</li>
+            <li>Adding helpful tool for unit-tests</li>
+            <li>Adding helpful tool for preparing packages for other systems: deb, brew, etc...</li>
+            <li>Adding helpful tool for docker images</li>
+            <li>Adding helpful tool for build servers</li>
+            <li>Adding helpful tool with web interface for coding, building, managment</li>
+            <li>Adding helpful tool for quick start of your local "source package registry"</li>
+            <li>Adding helpful tool for code analizing</li>
+            <li>Adding helpful tool for code documentation</li>
         </ul>
         
         <a class="anchorjs-link " name="install" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
@@ -112,12 +112,12 @@
 Via brew
 <textarea class="cm-show-code" cm-mode="shell">
 % brew tap wsjcpp/wsjcpp
-% brew install wsjcpp    
+% brew install wsjcpp
 </textarea>
 <br>
         <h3>MacOS: build from source code</h3>
 <textarea class="cm-show-code" cm-mode="shell">
-% brew install git-core cmake make pkg-config g++ curl-openssl 
+% brew install git-core cmake make pkg-config g++ curl-openssl
 % git clone https://github.com/wsjcpp/wsjcpp
 % cd wsjcpp/
 % ./build_simple.sh
@@ -137,12 +137,12 @@ $ sudo cp -r /tmp/wsjcpp.git /usr/local/bin/wsjcpp
         <a class="anchorjs-link " name="docker" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h1>Docker</h1>
 
-        <p>Step 1. install latest docker to your system.</p>
-        <p>Steo 2. Pull a container with wsjcpp</p>
+        <p>Step 1. Install the latest docker into your system</p>
+        <p>Step 2. Pull a container with wsjcpp</p>
         <textarea class="cm-show-code" cm-mode="shell">$ docker pull sea5kg/wsjcpp:latest</textarea>
         <br>
-        <p>Steo 3. Change directory to your project contains (cd ~/my-project)</p>
-        <p>Steo 4. Run interactive command line container</p>
+        <p>Step 3. Change the directory to the one containing your project (cd ~/my-project)</p>
+        <p>Step 4. Run interactive command line container</p>
 <textarea class="cm-show-code" cm-mode="shell">
 $ docker pull sea5kg/wsjcpp:latest
 $ docker run -it --rm \
@@ -151,12 +151,12 @@ $ docker run -it --rm \
     bash
 root@8b93098b8a07:~/project#
 </textarea>
-        <p>Now you can use command wsjcpp and build / run your project</p>
+        <p>Now you can use "wsjcpp" command and build / run your project</p>
         <br>
         <h3>more dependencies in docker image</h3>
-        <p>If you need more deb packages and programs than has image "sea5kg/wsjcpp:latest" you can install it via apt, but don't forget that after restart container they will be lost.</p>
+        <p>If you need more deb packages and programs than the image "sea5kg/wsjcpp:latest" contains, you can install it via apt, but don't forget that after restarting the container they will be lost.</p>
         <br>
-        <p>For fix this problem you need prepare Dockerfile.dev something like this:</p>
+        <p>To solve this problem you need to prepare Dockerfile.dev that looks something like this:</p>
 <textarea class="cm-show-code" cm-mode="dockerfile">
 FROM sea5kg/wsjcpp:latest
 # install build requiremenets
@@ -167,12 +167,12 @@ RUN apt update && apt install -y --no-install-recommends \
     qt5-default # replace to your packages
 </textarea>
         <br>        
-        <p>Now you can use command wsjcpp and build / run your project</p>
+        <p>Now you can use "wsjcpp" command and build / run your project</p>
         
         <p>Build your docker image:</p>
 <textarea class="cm-show-code" cm-mode="shell">$ docker build -t your-project-build:latest -f Dockerfile.dev</textarea>
         <br>
-        <p>run container from you image (+ extend port):</p>
+        <p>Run container from your image (+ extend port):</p>
 <textarea class="cm-show-code" cm-mode="shell">
 $ docker run -it --rm \
     -v `pwd`/.:/root/project \
