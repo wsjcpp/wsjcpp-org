@@ -108,6 +108,31 @@
         
         <a class="anchorjs-link " name="install" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h1>Install</h1>
+        <h3>MacOS: brew</h3>
+Via brew
+<textarea class="cm-show-code" cm-mode="shell">
+% brew tap wsjcpp/wsjcpp
+% brew install wsjcpp    
+</textarea>
+<br>
+        <h3>MacOS: build from source code</h3>
+<textarea class="cm-show-code" cm-mode="shell">
+% brew install git-core cmake make pkg-config g++ curl-openssl 
+% git clone https://github.com/wsjcpp/wsjcpp
+% cd wsjcpp/
+% ./build_simple.sh
+% sudo cp -r /tmp/wsjcpp.git /usr/local/bin/wsjcpp
+</textarea>
+<br>
+<h3>Debian/Ubuntu: build && install from source code</h3>
+<textarea class="cm-show-code" cm-mode="shell">
+$ sudo apt install cmake make g++ pkg-config libcurl4-openssl-dev git-core
+$ git clone https://github.com/wsjcpp/wsjcpp /tmp/wsjcpp.git
+$ cd /tmp/wsjcpp.git
+$ ./build_simple.sh
+$ sudo cp -r /tmp/wsjcpp.git /usr/local/bin/wsjcpp
+</textarea>
+<br>
 
         <a class="anchorjs-link " name="docker" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h1>Docker</h1>
