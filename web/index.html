@@ -55,6 +55,10 @@
                     <a class="nav-link" href="#packagemangers">C++ Managers</a>
                 </li>
 
+                <li class="nav-item active">
+                    <a class="nav-link" href="#ideas">Ideas</a>
+                </li>
+
             </ul>
             </div>
         </div>
@@ -383,6 +387,47 @@ root@0b93098b8a07:~/project#
         You know more "c++ managers / systems" ?  Please create  <a href="https://github.com/wsjcpp/wsjcpp-org/issues/new" target="_blank">issue</a>
         <br>
         <br>
+
+        <a class="anchorjs-link " name="ideas" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+        <h1>Ideas</h1>
+
+        <h3>idea: wsjcpp server-origin start</h3>
+        <p>Same "registry"</p>
+        Web server for caching/registry source packages in local network (maybe for inside of company)
+        <div class="alert alert-warn">Not implemented yet</div>
+
+        <p>what will include:</p>
+        <ul>
+            <li>registry source package</li>
+            <li>page of source package with infomation tests/builds/dependencies</li>
+            <li>search packages interface</li>
+            <li>feature: test build (enable/disable) - based on docker</li>
+            <li>feature: subscription about new versions (enable/disable)</li>
+            <li>feature: build/tests - loging</li>
+            <li>feature: build/tests - loging</li>
+            <li>feature: how much packages have this package in dependencies + remote icon</li>
+            <li>feature: code-covarage</li>
+            <li>feature: doxigen or like</li>
+            <li>feature: find on github wsjcpp packages by tag 'wsjcpp'</li>
+        </ul>
+
+        <p>тезисы </p>
+        <p>Он же билд сервер - для проверки пакетов (на основе докера)</p>
+
+        <p>Без авторизации - просто ссылка на репозиторий (github) и версию пакета (типа wsjcpp publish link : version) - также сохраняются все файлы для дистрибьюции - запрещена повторная заливка пакета</p>
+        <p>С авторизацией (простенькая) - загружается сорс код по файлово - то что в дистрибьюции - надо проработать протокол типа заливается вначале wsjcpp.yml - потом дозаливаются все остальные файлы</p>
+        <p>Регистрация только в ручном режиме - заходим в админку и добавляем пользователя с ролью девелопер</p>
+
+        <p>Состояние сборки и тестов (если не прошли тесты и сборка то пакет дропается с сервера а состояния остаются)</p>
+        <p>Хранятся последняя версия пакета а также версии на которые ссылаются предыдущие + хранятся unit-tests - весь остальной храм удаляется</p>
+        
+        <p>Команды:</p>
+
+        <p>wsjcpp publish ссылка-на-гитхаб:бранч-или-тег</p>
+        <p>wsjcpp publish путь-до-локального-пакета</p>
+        <p>wsjcpp publish --origin ссылка-сервера-регистратора что-куда</p>
+        <p>если оригин не указан то используется дефолтный wsjcpp.org</p>
+
     </div>
 </body>
 </html>
