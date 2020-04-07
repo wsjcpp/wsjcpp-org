@@ -112,12 +112,12 @@
 Via brew
 <textarea class="cm-show-code" cm-mode="shell">
 % brew tap wsjcpp/wsjcpp
-% brew install wsjcpp    
+% brew install wsjcpp
 </textarea>
 <br>
         <h3>MacOS: build from source code</h3>
 <textarea class="cm-show-code" cm-mode="shell">
-% brew install git-core cmake make pkg-config g++ curl-openssl 
+% brew install git-core cmake make pkg-config g++ curl-openssl
 % git clone https://github.com/wsjcpp/wsjcpp
 % cd wsjcpp/
 % ./build_simple.sh
@@ -137,12 +137,12 @@ $ sudo cp -r /tmp/wsjcpp.git /usr/local/bin/wsjcpp
         <a class="anchorjs-link " name="docker" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h1>Docker</h1>
 
-        <p>Step 1. install latest docker to your system.</p>
-        <p>Steo 2. Pull a container with wsjcpp</p>
+        <p>Step 1. Install the latest docker into your system</p>
+        <p>Step 2. Pull a container with wsjcpp</p>
         <textarea class="cm-show-code" cm-mode="shell">$ docker pull sea5kg/wsjcpp:latest</textarea>
         <br>
-        <p>Steo 3. Change directory to your project contains (cd ~/my-project)</p>
-        <p>Steo 4. Run interactive command line container</p>
+        <p>Step 3. Change the directory to the one containing your project (cd ~/my-project)</p>
+        <p>Step 4. Run interactive command line container</p>
 <textarea class="cm-show-code" cm-mode="shell">
 $ docker pull sea5kg/wsjcpp:latest
 $ docker run -it --rm \
@@ -151,12 +151,12 @@ $ docker run -it --rm \
     bash
 root@8b93098b8a07:~/project#
 </textarea>
-        <p>Now you can use command wsjcpp and build / run your project</p>
+        <p>Now you can use "wsjcpp" command and build / run your project</p>
         <br>
         <h3>more dependencies in docker image</h3>
-        <p>If you need more deb packages and programs than has image "sea5kg/wsjcpp:latest" you can install it via apt, but don't forget that after restart container they will be lost.</p>
+        <p>If you need more deb packages and programs than the image "sea5kg/wsjcpp:latest" contains, you can install it via apt, but don't forget that after restarting the container they will be lost.</p>
         <br>
-        <p>For fix this problem you need prepare Dockerfile.dev something like this:</p>
+        <p>To solve this problem you need to prepare Dockerfile.dev that looks something like this:</p>
 <textarea class="cm-show-code" cm-mode="dockerfile">
 FROM sea5kg/wsjcpp:latest
 # install build requiremenets
@@ -167,12 +167,12 @@ RUN apt update && apt install -y --no-install-recommends \
     qt5-default # replace to your packages
 </textarea>
         <br>        
-        <p>Now you can use command wsjcpp and build / run your project</p>
+        <p>Now you can use "wsjcpp" command and build / run your project</p>
         
         <p>Build your docker image:</p>
 <textarea class="cm-show-code" cm-mode="shell">$ docker build -t your-project-build:latest -f Dockerfile.dev</textarea>
         <br>
-        <p>run container from you image (+ extend port):</p>
+        <p>Run container from your image (+ extend port):</p>
 <textarea class="cm-show-code" cm-mode="shell">
 $ docker run -it --rm \
     -v `pwd`/.:/root/project \
