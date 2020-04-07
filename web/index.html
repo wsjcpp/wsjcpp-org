@@ -4,12 +4,15 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./css/bootstrap-4.4.1.min.css"/>
+    <link rel="stylesheet" href="./css/codemirror-5.52.2.css"/>
     <link rel="stylesheet" href="./css/index.css"/>
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/popper-1.14.6-umd.min.js"></script>
     <script src="./js/bootstrap-4.4.1.min.js"></script>
-    <script src="./js/TabulaturEditor.js"></script>
-    <script src="./js/createWaves.js"></script>
+    <script src="./js/codemirror-5.52.2.js"></script>
+    <script src="./mode/shell/shell.js"></script>
+    <script src="./mode/cmake/cmake.js"></script>
+    <script src="./mode/clike/clike.js"></script>
     <script src="./js/index.js"></script>
     <title>wsjcpp - yet one c++ source package manager</title>
 </head>
@@ -104,6 +107,51 @@
 
         <a class="anchorjs-link " name="docker" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h1>Docker</h1>
+
+        <p>Step 1. install latest docker to your system.</p>
+        <p>Steo 2. Pull a container with wsjcpp</p>
+        <textarea class="cm-show-code" cm-mode="shell">$ docker pull sea5kg/wsjcpp:latest</textarea>
+        <br>
+        <p>Steo 3. Change directory to your project contains (cd ~/my-project)</p>
+        <p>Steo 4. Run interactive command line container</p>
+<textarea class="cm-show-code" cm-mode="shell">
+$ docker pull sea5kg/wsjcpp:latest
+$ docker run -it --rm \
+    -v `pwd`/.:/root/project \
+    sea5kg/wsjcpp:latest \
+    bash
+root@8b93098b8a07:~/project#
+</textarea>
+        <p>Now you can use command wsjcpp and build / run your project</p>
+        <br>
+        <h3>more dependencies in docker image</h3>
+        <p>If you need more deb packages and programs than has image "sea5kg/wsjcpp:latest" you can install it via apt, but don't forget that after restart container they will be lost.</p>
+        <br>
+        <p>For fix this problem you need prepare Dockerfile.dev something like this:</p>
+<textarea class="cm-show-code" cm-mode="dockerfile">
+FROM sea5kg/wsjcpp:latest
+# install build requiremenets
+RUN apt update && apt install -y --no-install-recommends \
+    libqt5sql5-mysql \ # replace to your packages
+    libqt5websockets5 \ # replace to your packages
+    libqt5websockets5-dev \ # replace to your packages
+    qt5-default # replace to your packages
+</textarea>
+        <br>        
+        <p>Now you can use command wsjcpp and build / run your project</p>
+        
+        <p>Build your docker image:</p>
+<textarea class="cm-show-code" cm-mode="shell">$ docker build -t your-project-build:latest -f Dockerfile.dev</textarea>
+        <br>
+        <p>run container from you image (+ extend port):</p>
+<textarea class="cm-show-code" cm-mode="shell">
+$ docker run -it --rm \
+    -v `pwd`/.:/root/project \
+    your-project-build:latest \
+    -p 1234:1234 \
+    bash
+root@0b93098b8a07:~/project#
+</textarea>
 
         <a class="anchorjs-link " name="issues" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h1>Issues</h1>
