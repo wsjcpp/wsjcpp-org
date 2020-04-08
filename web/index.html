@@ -204,6 +204,104 @@ root@0b93098b8a07:~/project#
         <a class="anchorjs-link " name="packages" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h1>Packages</h1>
         
+        <h3>search packages in github</h3>
+        I this that better praxis add topic in github repository:
+        <a target="_blank" href="https://github.com/topics/wsjcpp">https://github.com/topics/wsjcpp</a>
+
+        <h3>init new package</h3>
+<textarea class="cm-show-code" cm-mode="shell">
+$ mkdir your-package-name
+$ cd your-package-name
+$ wsjcpp init .
+</textarea>
+
+Now you need fill several fields (or you can fill later in wsjcpp.yml):
+<textarea class="cm-show-code" cm-mode="shell">
+Source Package Name: your-package-name
+Version: v0.0.1
+Description: Some package
+Author's Name: Some Author
+Author's Email: some@author.org
+</textarea>
+
+On this step will be generated different files, like (only if files not exists):
+
+<ul>
+    <li>src.wsjcpp/CMakeLists.txt - file will be automaticly updated after install packages</li>
+    <li>src.wsjcpp/wsjcpp_core/* - preinstalled package with core for unit-tests and logger</li>
+    <li>unit-tests.wsjcpp/* <- folder for unit-tests</li>
+    <li>src/main.cpp</li>
+    <li>.wsjcpp/* <- temporary folder</li>
+    <li>CMakeLists.txt</li>
+    <li>build_simple.sh</li>
+    <li>.gitignore</li>
+    <li>...</li>
+</ul>
+
+        <h3>include you existsing package for wsjcpp</h3>
+<p>Step 1. Please add to you repository specific file: "wsjcpp.yml" with minimal content</p>
+<textarea class="cm-show-code" cm-mode="shell">
+wsjcpp_version: "v0.1.1"
+cmake_minimum_required: "3.0"
+cmake_cxx_standard: "11"
+name: "you/package-name"
+version: "v0.0.0"
+description: "Describe your package"
+issues: "https://github.com/you/package-name/issues"
+keywords:
+  - "c++"
+  - "json"
+
+repositories:
+  - type: main
+    url: "https://github.com/you/package-name"
+
+authors:
+  - name: "Your Name"
+    email: "your@email.com"
+
+distribution:
+  - source-file: "src/some.h"
+    target-file: "some.h"
+    type: "source-code"
+  - source-file: "src/some.h"
+    target-file: "some.h"
+    type: "source-code"
+</textarea>
+
+<p>Step 2. And add topic "wsjcpp" to github project</p>
+
+<p>Step 3. Test your project</p>
+<textarea class="cm-show-code" cm-mode="shell">
+wsjcpp_version: "v0.1.1"
+cmake_minimum_required: "3.0"
+cmake_cxx_standard: "11"
+name: "you/package-name"
+version: "v0.0.0"
+description: "Describe your package"
+issues: "https://github.com/you/package-name/issues"
+keywords:
+    - "c++"
+    - "json"
+
+repositories:
+    - type: main
+    url: "https://github.com/you/package-name"
+
+authors:
+    - name: "Your Name"
+    email: "your@email.com"
+
+distribution:
+    - source-file: "src/some.h"
+    target-file: "some.h"
+    type: "source-code"
+    - source-file: "src/some.h"
+    target-file: "some.h"
+    type: "source-code"
+</textarea>
+
+
         <hr>
 
         <a class="anchorjs-link " name="contacts" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
@@ -454,6 +552,14 @@ root@0b93098b8a07:~/project#
         Scan sources and find all TODO in code
         options: where scan 
         <a href="https://github.com/wsjcpp/wsjcpp/issues/20">https://github.com/wsjcpp/wsjcpp/issues/20</a>
+        <br><br>
+
+        <h3>idea: wsjcpp docs generate</h3>
+        Scan sources and generate documantation like a doxygen
+        <br><br>
+
+        <h3>idea: wsjcpp clean</h3>
+        Call the script ./clean.sh
         <br><br>
 
         <h3>idea: wsjcpp server-origin start</h3>
