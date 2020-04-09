@@ -301,6 +301,90 @@ distribution:
     type: "source-code"
 </textarea>
 
+        <hr>
+
+        <a class="anchorjs-link " name="usage" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+        <h1>Usage</h1>
+        
+        <h3>wsjcpp info</h3>
+        Information about current package. Example:
+<textarea class="cm-show-code" cm-mode="shell">
+===== begin: wsjcpp info =====
+Name: wsjcpp
+Version: v0.1.1
+Description: C++ Source Package manager
+Directory: .
+wsjcpp.version = v0.0.2
+Keywords: 
+    - c++
+    - sources
+
+Distribution-Files: 
+    - src/wsjcpp_package_manager_distribution_file.cpp -> wsjcpp_package_manager_distribution_file.cpp [source-code]
+    - src/wsjcpp_package_manager_distribution_file.h -> wsjcpp_package_manager_distribution_file.h [source-code]
+    - src/wsjcpp_package_manager_safe_scripting_generate.cpp -> wsjcpp_package_manager_safe_scripting_generate.cpp [source-code]
+    - src/wsjcpp_package_manager_safe_scripting_generate.h -> wsjcpp_package_manager_safe_scripting_generate.h [source-code]
+    - src/wsjcpp_package_manager.cpp -> wsjcpp_package_manager.cpp[source-code]
+    - src/wsjcpp_package_manager.h -> wsjcpp_package_manager.h [source-code]
+
+Authors: 
+    - Evgenii Sopov <mrseakg@gmail.com>
+
+Dependencies: 
+    - wsjcpp-core:v0.1.1
+    - wsjcpp-yaml:v0.1.1
+    - wsjcpp-hashes:v0.1.0
+    - wsjcpp-safe-scripting:v0.1.0
+    - wsjcpp-arguments:v0.1.0
+===== end: wsjcpp info =====
+
+</textarea>
+        <br><br>
+        <h3>wsjcpp distribution</h3>
+        Developer define what exectly your package will distributed (without main/trash/unit-tests) - only core code.
+        <ul>
+            <li>wsjcpp dist list - list of distribution files</li>
+            <li>wsjcpp dist add filepath1 - add to distribution files</li>
+            <li>wsjcpp dist reomve filepath1 - remove to distribution (removed info only from wsjcpp.yml not from filesystem)</li>
+        </ul>
+        Example:
+<textarea class="cm-show-code" cm-mode="shell">
+% wsjcpp dist list
+Distribution list:
+   source-code: 'src/wsjcpp_package_manager_distribution_file.cpp' -> 'wsjcpp_package_manager_distribution_file.cpp'
+   source-code: 'src/wsjcpp_package_manager_distribution_file.h' -> 'wsjcpp_package_manager_distribution_file.h'
+   source-code: 'src/wsjcpp_package_manager_safe_scripting_generate.cpp' -> 'wsjcpp_package_manager_safe_scripting_generate.cpp'
+   source-code: 'src/wsjcpp_package_manager_safe_scripting_generate.h' -> 'wsjcpp_package_manager_safe_scripting_generate.h'
+   source-code: 'src/wsjcpp_package_manager.cpp' -> 'wsjcpp_package_manager.cpp'
+   source-code: 'src/wsjcpp_package_manager.h' -> 'wsjcpp_package_manager.h'
+% wsjcpp dist add src/some_file.h
+Added.
+% wsjcpp dist remove src/some_file.h
+Removed.
+</textarea>
+        <br><br>
+        <h3>wsjcpp unit-tests</h3>
+        Create unit-tests for your distribution files
+        <ul>
+            <li>wsjcpp unit-tests list - list of defined unit-tests</li>
+            <li>wsjcpp unit-tests create NameTest "Description Test" - will be created few files and added to unit-tests/CMakeLists.txt</li>
+            <li>wsjcpp unit-tests delete NameTest - !!! Removed files and definition from wsjcpp.yml</li>
+            <li>wsjcpp unit-tests disable NameTest - Disable unit-test (exclude from build/run)</li>
+            <li>wsjcpp unit-tests enable NameTest - Enable unit-test (include to build/run)</li>
+        </ul>
+        Example:
+<textarea class="cm-show-code" cm-mode="shell">
+% wsjcpp unit-tests list
+2020-04-09 11:16:18.097, 0x0x1130c1dc0 [INFO] WsjcppArgumentProcessor-list: 
+Unit Tests Cases:
+* NormalizeUnitTestName - Test Normalize UnitTest Name
+* generateFilenameForUnitTest - Test generate filename for UnitTest
+* InitPackage - Test for init package
+* ReadPackage - Test for read package
+% wsjcpp unit-tests create ExampleTest "Some example test"
+% wsjcpp unit-tests delete ExampleTest
+Unit Test 'ExampleTest' removed successfully.
+</textarea>
 
         <hr>
 
@@ -560,6 +644,10 @@ distribution:
 
         <h3>idea: wsjcpp clean</h3>
         Call the script ./clean.sh
+        <br><br>
+
+        <h3>idea: wsjcpp install -g "url" </h3>
+        Add installation to global directory in system / or in home user directory
         <br><br>
 
         <h3>idea: wsjcpp server-origin start</h3>
