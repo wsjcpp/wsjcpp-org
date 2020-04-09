@@ -79,7 +79,7 @@
             I need your help for this project! <br>
             Please give me your star or just watch or make fork <a href="https://github.com/wsjcpp/wsjcpp">https://github.com/wsjcpp/wsjcpp</a><br>
             For submit official package to brew: "GitHub repository not notable enough (&lt;30 forks, &lt;30 watchers and &lt;75 stars)"
-        </div> 
+        </div>
 
         <h3>features - has implementation</h3>
         <ul>
@@ -386,7 +386,33 @@ Unit Tests Cases:
 Unit Test 'ExampleTest' removed successfully.
 </textarea>
 
+    <br><br>
+    <h3>wsjcpp generate</h3>
+    Generate source code by templates which coming with packages
+    <ul>
+        <li>wsjcpp generate list - list of templates</li>
+        <li>wsjcpp generate TemplateName ClassName - will be generate files by template and added to your CMakeLists.txt between lines '#### BEGIN_WSJCPP_APPEND' and '#### END_WSJCPP_APPEND'</li>
+    </ul>
+    Example:
+<textarea class="cm-show-code" cm-mode="shell">
+% wsjcpp generate list
+Generators: 
+ - wsjcpp generate WsjcppSafeScriptingProc YouClassNameHere
+ - wsjcpp generate WsjcppArgumentProcessor YouClassNameHere
+
+ % wsjcpp generate WsjcppArgumentProcessor Some
+ 2020-04-09 11:44:09.418, 0x0x10a3aadc0 [INFO] WsjcppSafeScriptingContext: arg1 = 'Some'
+ 2020-04-09 11:44:09.420, 0x0x10a3aadc0 [INFO] WsjcppSafeScriptingProc[log_info]: 
+ ======
+ Generated class:
+     - ArgumentProcessorSome
+ Generated files:
+     - ./src/argument_processor_some.h
+     - ./src/argument_processor_some.cpp
+ ======
+</textarea>
         <hr>
+        
 
         <a class="anchorjs-link " name="contacts" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h1>Contacts</h1>
@@ -648,6 +674,10 @@ Unit Test 'ExampleTest' removed successfully.
 
         <h3>idea: wsjcpp install -g "url" </h3>
         Add installation to global directory in system / or in home user directory
+        <br><br>
+
+        <h3>idea: wsjcpp install "git@github.com:...." </h3>
+        Add to support install packages from private repository (with credentials https/ssh/git)
         <br><br>
 
         <h3>idea: wsjcpp server-origin start</h3>
