@@ -37,26 +37,31 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#issues">Issues</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#packages">Packages</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#usage">Usage</a>
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Documentation</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#search_packages_in_github">search packages in github</a>
+                        <a class="dropdown-item" href="#init_new_package">init new package</a>
+                        <a class="dropdown-item" href="#include_your_existing_package_into_wsjcpp">include your existing package into wsjcpp</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#wsjcpp_info">wsjcpp info - about current package</a>
+                        <a class="dropdown-item" href="#wsjcpp_distribution">wsjcpp distribution</a>
+                        <a class="dropdown-item" href="#wsjcpp_unit_tests">wsjcpp unit-tests</a>
+                        <a class="dropdown-item" href="#wsjcpp_generate">wsjcpp generate</a>
+                        <a class="dropdown-item" href="#wsjcpp_prepare">wsjcpp prepare</a>
+                    </div>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#contacts">Contacts</a>
                 </li>
                 
-                <li class="nav-item active">
-                    <a class="nav-link" href="#cppconferences">C++ Conferences</a>
-                </li>
-
-                <li class="nav-item active">
-                    <a class="nav-link" href="#packagemangers">C++ Managers</a>
-                </li>
-
-                <li class="nav-item active">
-                    <a class="nav-link" href="#cppservices">C++ Services</a>
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">C++ References</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#cppconferences">C++ Conferences</a>
+                        <a class="dropdown-item" href="#packagemangers">C++ Managers</a>
+                        <a class="dropdown-item" href="#cppservices">C++ Services</a>
+                    </div>
                 </li>
 
                 <li class="nav-item active">
@@ -205,13 +210,15 @@ root@0b93098b8a07:~/project#
         </p>
         <hr>
 
-        <a class="anchorjs-link " name="packages" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
-        <h1>Packages</h1>
+        <a class="anchorjs-link " name="documentation" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+        <h1>Documentation</h1>
         
+        <a class="anchorjs-link " name="search_packages_in_github" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h3>search packages in github</h3>
         I think that better praxis is to add topic in the github repository:
         <a target="_blank" href="https://github.com/topics/wsjcpp">https://github.com/topics/wsjcpp</a>
 
+        <a class="anchorjs-link " name="init_new_package" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h3>init new package</h3>
 <textarea class="cm-show-code" cm-mode="shell">
 $ mkdir your-package-name
@@ -241,7 +248,7 @@ At this step different files will be generated (if they don't exist), eg:
     <li>.gitignore</li>
     <li>...</li>
 </ul>
-
+        <a class="anchorjs-link " name="include_your_existing_package_into_wsjcpp" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h3>include your existing package into wsjcpp</h3>
 <p>Step 1. Please add "wsjcpp.yml" file with minimal content into your repository</p>
 <textarea class="cm-show-code" cm-mode="shell">
@@ -305,11 +312,10 @@ distribution:
     type: "source-code"
 </textarea>
 
-        <hr>
-
-        <a class="anchorjs-link " name="usage" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
-        <h1>Usage</h1>
+        <br></br>
         
+        <a class="anchorjs-link " name="wsjcpp_info" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+
         <h3>wsjcpp info</h3>
         Information about current package. Example:
 <textarea class="cm-show-code" cm-mode="shell">
@@ -344,6 +350,7 @@ Dependencies:
 
 </textarea>
         <br><br>
+        <a class="anchorjs-link " name="wsjcpp_distribution" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h3>wsjcpp distribution</h3>
         Developer define what exectly your package will distributed (without main/trash/unit-tests) - only core code.
         <ul>
@@ -367,6 +374,7 @@ Added.
 Removed.
 </textarea>
         <br><br>
+        <a class="anchorjs-link " name="wsjcpp_unit_tests" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h3>wsjcpp unit-tests</h3>
         Create unit-tests for your distribution files
         <ul>
@@ -391,6 +399,7 @@ Unit Test 'ExampleTest' removed successfully.
 </textarea>
 
     <br><br>
+    <a class="anchorjs-link " name="wsjcpp_generate" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
     <h3>wsjcpp generate</h3>
     Generate source code by templates which coming with packages
     <ul>
@@ -674,38 +683,74 @@ Generators:
         <a class="anchorjs-link " name="ideas" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h1>Ideas</h1>
 
-        <h3>idea: wsjcpp resources</h3>
-        Convert files into C++ code
-        <a href="https://github.com/wsjcpp/wsjcpp/issues/25">https://github.com/wsjcpp/wsjcpp/issues/25</a>
-        <br><br>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">idea: wsjcpp resources</h5>
+                <h6 class="card-subtitle mb-2 text-muted">idea</h6>
+                <p class="card-text">Convert files into C++ code</p>
+                <a href="https://github.com/wsjcpp/wsjcpp/issues/25" target="_blank" class="card-link">GitHub Issue</a>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">idea: wsjcpp prepare deb-package</h5>
+                <h6 class="card-subtitle mb-2 text-muted">idea</h6>
+                <p class="card-text">Prepare folder with a deb package</p>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">idea: wsjcpp prepare ppa-package</h5>
+                <h6 class="card-subtitle mb-2 text-muted">idea</h6>
+                <p class="card-text">Prepare folder for a ppa source package</p>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">idea: wsjcpp prepare dockerfile</h5>
+                <h6 class="card-subtitle mb-2 text-muted">idea</h6>
+                <p class="card-text">Prepare sample Dockerfile for you package</p>
+                <a href="https://github.com/wsjcpp/wsjcpp/issues/34" target="_blank" class="card-link">GitHub Issue</a>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">idea: wsjcpp docs generate</h5>
+                <h6 class="card-subtitle mb-2 text-muted">idea</h6>
+                <p class="card-text">Scan sources and generate documantation like a doxygen</p>
+                <a href="https://github.com/wsjcpp/wsjcpp/issues/36" target="_blank" class="card-link">GitHub Issue</a>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">idea: web-dev-panel</h5>
+                <h6 class="card-subtitle mb-2 text-muted">idea</h6>
+                <p class="card-text">
+                    <p>launch: wsjcpp web-dev-panel start --web ./web --project-dir ./project --port 8777</p>
+                    <p>Or easy (default port: 8777): wsjcpp web-dev-panel start</p>
+                    
+                    <p>missing package: wsjcpp-do-run-command</p>
 
-        <h3>idea: wsjcpp prepare deb package</h3>
-        Prepare folder with a deb package
-        <br><br>
+                    What will be do:
+                    <ul>
+                        <li>Simple web app</li>
+                        <li>file tree in project (exclude git maybe)</li>
+                        <li>Code editor: use a CodeMirror</li>
+                        <li>Command line web</li>
+                        <li>Tabs: editor / console / test / packages / docs</li>
+                        <li>Or buttons: build / run-unit-tests</li>
+                    </ul>
+                </p>
+                <a href="https://github.com/wsjcpp/wsjcpp/issues/37" target="_blank" class="card-link">GitHub Issue</a>
+            </div>
+        </div>
 
-        <h3>idea: wsjcpp prepare ppa package</h3>
-        Prepare folder for a ppa source package
-        <br><br>
-
-        <h3>idea: wsjcpp docs generate</h3>
-        Scan sources and generate documantation like a doxygen
-        <br><br>
-
-        <h3>idea: web-dev-panel</h3>
-        <p>launch: wsjcpp web-dev-panel start --web ./web --project-dir ./project --port 8777</p>
-        <p>Or easy (default port: 8777): wsjcpp web-dev-panel start</p>
-        
-        <p>missing package: wsjcpp-do-run-command</p>
-
-        What will be do:
-        <ul>
-            <li>Simple web app</li>
-            <li>file tree in project (exclude git maybe)</li>
-            <li>Code editor: use a CodeMirror</li>
-            <li>Command line web</li>
-            <li>Tabs: editor / console / test / packages / docs</li>
-            <li>Or buttons: build / run-unit-tests</li>
-        </ul>
         <br><br>
         
         <h3>idea: add support conan</h3>
@@ -759,8 +804,6 @@ Generators:
         <p>wsjcpp publish путь-до-локального-пакета</p>
         <p>wsjcpp publish --origin ссылка-сервера-регистратора что-куда</p>
         <p>если оригин не указан то используется дефолтный wsjcpp.org</p>
-
-        
 
     </div>
 </body>
