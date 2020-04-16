@@ -85,9 +85,9 @@
         <p>Yet another... C++ Source Package Manager.</p>
 
         <div class="alert alert-warning">
-            I need your help for this project! <br>
-            Please give me your star or just watch or make fork <a href="https://github.com/wsjcpp/wsjcpp">https://github.com/wsjcpp/wsjcpp</a><br>
-            For submit official package to brew: "GitHub repository not notable enough (&lt;30 forks, &lt;30 watchers and &lt;75 stars)"
+            I need your help with this project! <br>
+            Please rate it with a star, follow updates notifications by clicking on "watch" button or just make a fork <a href="https://github.com/wsjcpp/wsjcpp">https://github.com/wsjcpp/wsjcpp</a><br>
+            For submitting the official package into brew: "GitHub repository is not notable enough (&lt;30 forks, &lt;30 watchers and &lt;75 stars)"
         </div>
 
         <h3>features - has implementation</h3>
@@ -352,11 +352,11 @@ Dependencies:
         <br><br>
         <a class="anchorjs-link " name="wsjcpp_distribution" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h3>wsjcpp distribution</h3>
-        Developer define what exectly your package will distributed (without main/trash/unit-tests) - only core code.
+        Developer defines what exactly your package will distribute (without main/trash/unit-tests - only core code).
         <ul>
-            <li>wsjcpp dist list - list of distribution files</li>
-            <li>wsjcpp dist add filepath1 - add to distribution files</li>
-            <li>wsjcpp dist reomve filepath1 - remove to distribution (removed info only from wsjcpp.yml not from filesystem)</li>
+            <li>wsjcpp dist list - list of distributed files</li>
+            <li>wsjcpp dist add filepath1 - add to distributed files</li>
+            <li>wsjcpp dist remove filepath1 - remove from distribution (remove info only from wsjcpp.yml, not from filesystem)</li>
         </ul>
         Example:
 <textarea class="cm-show-code" cm-mode="shell">
@@ -376,13 +376,13 @@ Removed.
         <br><br>
         <a class="anchorjs-link " name="wsjcpp_unit_tests" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h3>wsjcpp unit-tests</h3>
-        Create unit-tests for your distribution files
+        Create unit-tests for your distributed files
         <ul>
             <li>wsjcpp unit-tests list - list of defined unit-tests</li>
-            <li>wsjcpp unit-tests create NameTest "Description Test" - will be created few files and added to unit-tests/CMakeLists.txt</li>
-            <li>wsjcpp unit-tests delete NameTest - !!! Removed files and definition from wsjcpp.yml</li>
-            <li>wsjcpp unit-tests disable NameTest - Disable unit-test (exclude from build/run)</li>
-            <li>wsjcpp unit-tests enable NameTest - Enable unit-test (include to build/run)</li>
+            <li>wsjcpp unit-tests create NameTest "Description Test" - few files will be created and added to unit-tests/CMakeLists.txt</li>
+            <li>wsjcpp unit-tests delete NameTest - !!! remove files and definitions from wsjcpp.yml</li>
+            <li>wsjcpp unit-tests disable NameTest - disable unit-test (exclude from build/run)</li>
+            <li>wsjcpp unit-tests enable NameTest - enable unit-test (include into build/run)</li>
         </ul>
         Example:
 <textarea class="cm-show-code" cm-mode="shell">
@@ -401,10 +401,10 @@ Unit Test 'ExampleTest' removed successfully.
     <br><br>
     <a class="anchorjs-link " name="wsjcpp_generate" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
     <h3>wsjcpp generate</h3>
-    Generate source code by templates which coming with packages
+    Generate source code from templates supplied with packages
     <ul>
         <li>wsjcpp generate list - list of templates</li>
-        <li>wsjcpp generate TemplateName ClassName - will be generate files by template and added to your CMakeLists.txt between lines '#### BEGIN_WSJCPP_APPEND' and '#### END_WSJCPP_APPEND'</li>
+        <li>wsjcpp generate TemplateName ClassName - files will be generated from template and added into your CMakeLists.txt between lines '#### BEGIN_WSJCPP_APPEND' and '#### END_WSJCPP_APPEND'</li>
     </ul>
     Example:
 <textarea class="cm-show-code" cm-mode="shell">
@@ -722,7 +722,7 @@ Generators:
             <div class="card-body">
                 <h5 class="card-title">idea: wsjcpp docs generate</h5>
                 <h6 class="card-subtitle mb-2 text-muted">idea</h6>
-                <p class="card-text">Scan sources and generate documantation like a doxygen</p>
+                <p class="card-text">Scan sources and generate documentation like a doxygen</p>
                 <a href="https://github.com/wsjcpp/wsjcpp/issues/36" target="_blank" class="card-link">GitHub Issue</a>
             </div>
         </div>
@@ -733,15 +733,15 @@ Generators:
                 <h6 class="card-subtitle mb-2 text-muted">idea</h6>
                 <p class="card-text">
                     <p>launch: wsjcpp web-dev-panel start --web ./web --project-dir ./project --port 8777</p>
-                    <p>Or easy (default port: 8777): wsjcpp web-dev-panel start</p>
+                    <p>Or simply (default port: 8777): wsjcpp web-dev-panel start</p>
                     
                     <p>missing package: wsjcpp-do-run-command</p>
 
-                    What will be do:
+                    What will be done:
                     <ul>
                         <li>Simple web app</li>
-                        <li>file tree in project (exclude git maybe)</li>
-                        <li>Code editor: use a CodeMirror</li>
+                        <li>File tree of a project (exclude git maybe)</li>
+                        <li>Code editor: using a CodeMirror</li>
                         <li>Command line web</li>
                         <li>Tabs: editor / console / test / packages / docs</li>
                         <li>Or buttons: build / run-unit-tests</li>
@@ -766,7 +766,7 @@ Generators:
         <br><br>
 
         <h3>idea: wsjcpp install "git@github.com:...." </h3>
-        Add to support install packages from private repository (with credentials https/ssh/git)
+        Add support of installation packages from private repository (with credentials https/ssh/git)
         <br><br>
 
         <h3>idea: wsjcpp server-origin start</h3>
@@ -781,7 +781,7 @@ Generators:
             <li>package search interface</li>
             <li>feature: test build (enable/disable) - based on docker</li>
             <li>feature: subscription about new versions (enable/disable)</li>
-            <li>feature: build/tests - loging</li>
+            <li>feature: build/tests - logging</li>
             <li>feature: number of package dependencies for a specific package + remote icon</li>
             <li>feature: code-covarage</li>
             <li>feature: doxigen or something like it</li>
