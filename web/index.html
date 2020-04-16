@@ -48,6 +48,7 @@
                         <a class="dropdown-item" href="#wsjcpp_distribution">wsjcpp distribution</a>
                         <a class="dropdown-item" href="#wsjcpp_unit_tests">wsjcpp unit-tests</a>
                         <a class="dropdown-item" href="#wsjcpp_generate">wsjcpp generate</a>
+                        <a class="dropdown-item" href="#wsjcpp_resources">wsjcpp resources</a>
                         <a class="dropdown-item" href="#wsjcpp_prepare">wsjcpp prepare</a>
                     </div>
                 </li>
@@ -424,6 +425,81 @@ Generators:
      - ./src/argument_processor_some.cpp
  ======
 </textarea>
+        
+    <br><br>
+    <a class="anchorjs-link " name="wsjcpp_resources" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+    <h3>wsjcpp resources</h3>
+    Convert binary or text resource files to c++ code
+    <ul>
+        <li>wsjcpp [resources|res] [list|ls] - list of defined resources</li>
+        <li>wsjcpp [resources|res] add [--text|--binary] path_to_file - add file to resources and generate c++ files</li>
+        <li>wsjcpp [resources|res] [remove|rm] path_to_file - removed c++ files, which was generated</li>
+    </ul>
+
+    Example:
+<textarea class="cm-show-code" cm-mode="shell">
+% wsjcpp res ls --more
+
+resources: 
+  - filepath: build_simple.sh
+    filesize: 74
+    pack-as: text
+    sha1: 01af063d6f69d212dc443ed8afce828855f040a2
+    modified: 2019-08-09 13:57:33
+  - filepath: README.md
+    filesize: 4218
+    pack-as: text
+    sha1: 
+    modified: 2020-04-13 12:39:27
+
+% ./wsjcpp res rm README.md
+Removed files: 
+
+- ./src-resources.wsjcpp/README_md_path04c6e9.h
+- ./src-resources.wsjcpp/README_md_path04c6e9.cpp
+
+% ./wsjcpp res add README.md
+2020-04-09 11:44:09.418, 0x0x10a3aadc0 [INFO] WsjcppSafeScriptingContext: arg1 = 'Some'
+2020-04-09 11:44:09.420, 0x0x10a3aadc0 [INFO] WsjcppSafeScriptingProc[log_info]: 
+======
+Generated class:
+    - ArgumentProcessorSome
+Generated files:
+    - ./src/argument_processor_some.h
+    - ./src/argument_processor_some.cpp
+======
+</textarea>
+
+<br>
+How to use resources from code:
+
+<textarea class="cm-show-code" cm-mode="clike">
+
+#include &lt;wsjcpp_resources_manager.h&gt;
+
+int main () {
+    WsjcppResourceFile *pFile = WsjcppResourcesManager::get("build_simple.sh");
+
+    if (pFile->getPackAs() == "text") {
+        std::string sBuildSipleSh(pFile->getBuffer(), pFile->getBufferSize());
+    }
+
+    if (pFile->getPackAs() == "binary") {
+        pFile->getBuffer(); // buffer 
+        pFile->getBufferSize(); // buffer size
+    }
+    return -1;
+}
+</textarea>
+
+    <br><br>
+    <a class="anchorjs-link " name="wsjcpp_prepare" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+    <h3>wsjcpp prepare</h3>
+        Prepare some usefull files
+        <ul>
+            <li>wsjcpp prepare travis - Prepare basic file (.travis.yml) for Travis CI</li>
+            <li>wsjcpp prepare homebrew - Prepare package for homebrew</li>
+        </ul>
         <hr>
         
 
@@ -682,16 +758,6 @@ Generators:
 
         <a class="anchorjs-link " name="ideas" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h1>Ideas</h1>
-
-        <br>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">idea: wsjcpp resources</h5>
-                <h6 class="card-subtitle mb-2 text-muted">idea</h6>
-                <p class="card-text">Convert files into C++ code</p>
-                <a href="https://github.com/wsjcpp/wsjcpp/issues/25" target="_blank" class="card-link">GitHub Issue</a>
-            </div>
-        </div>
         <br>
         <div class="card">
             <div class="card-body">
