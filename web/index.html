@@ -131,7 +131,7 @@ Via brew
 % brew tap wsjcpp/wsjcpp
 % brew install wsjcpp
 </textarea>
-for upgrade package:
+To upgrade package:
 <textarea class="cm-show-code" cm-mode="shell">
 % brew upgrade wsjcpp
 </textarea>
@@ -434,11 +434,11 @@ Generators:
     <br><br>
     <a class="anchorjs-link " name="wsjcpp_resources" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
     <h3>wsjcpp resources</h3>
-    Convert binary or text resource files to c++ code
+    Convert binary or text resource files into C++ code
     <ul>
         <li>wsjcpp [resources|res] [list|ls] - list of defined resources</li>
-        <li>wsjcpp [resources|res] add [--text|--binary] path_to_file - add file to resources and generate c++ files</li>
-        <li>wsjcpp [resources|res] [remove|rm] path_to_file - removed c++ files, which was generated</li>
+        <li>wsjcpp [resources|res] add [--text|--binary] path_to_file - add file to resources and generate C++ files</li>
+        <li>wsjcpp [resources|res] [remove|rm] path_to_file - remove C++ files, which were generated</li>
     </ul>
 
     Example:
@@ -458,14 +458,14 @@ resources:
     modified: 2020-04-13 12:39:27
 
 % ./wsjcpp res rm README.md
-Removed files: 
+Removed files:
 
 - ./src-resources.wsjcpp/README_md_path04c6e9.h
 - ./src-resources.wsjcpp/README_md_path04c6e9.cpp
 
 % ./wsjcpp res add README.md
 2020-04-09 11:44:09.418, 0x0x10a3aadc0 [INFO] WsjcppSafeScriptingContext: arg1 = 'Some'
-2020-04-09 11:44:09.420, 0x0x10a3aadc0 [INFO] WsjcppSafeScriptingProc[log_info]: 
+2020-04-09 11:44:09.420, 0x0x10a3aadc0 [INFO] WsjcppSafeScriptingProc[log_info]:
 ======
 Generated class:
     - ArgumentProcessorSome
@@ -502,7 +502,7 @@ int main () {
     <h3>wsjcpp prepare</h3>
         Prepare some usefull files
         <ul>
-            <li>wsjcpp prepare travis - Prepare basic file (.travis.yml) for Travis CI</li>
+            <li>wsjcpp prepare travis - Prepare base file (.travis.yml) for Travis CI</li>
             <li>wsjcpp prepare homebrew - Prepare package for homebrew</li>
         </ul>
         <hr>
