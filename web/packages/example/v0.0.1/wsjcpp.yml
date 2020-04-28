@@ -17,7 +17,7 @@ keywords:
 
 distribution:
   - source-file: "src/example.cpp"
-    target-file: "src/example.h"
+    target-file: "example.cpp"
     type: "source-code"
   - source-file: "src/example.h"
     target-file: "example.h"
