@@ -42,7 +42,7 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#search_packages_in_github">search packages in github</a>
                         <a class="dropdown-item" href="#init_new_package">init new package</a>
-                        <a class="dropdown-item" href="#include_your_existing_package_into_wsjcpp">include your existing package into wsjcpp</a>
+                        <a class="dropdown-item" href="#submit_source_package_into_wsjcpp">Submit package into wsjcpp</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#wsjcpp_info">wsjcpp info - about current package</a>
                         <a class="dropdown-item" href="#wsjcpp_distribution">wsjcpp distribution</a>
@@ -95,26 +95,27 @@
 
         <h3>features - has implementation</h3>
         <ul>
-            <li>Creating an open-source package by anyone (using github only for now...)</li>
+            <li>Creating an open-source package by anyone (github.com / gitlab.com / bitbucket.org / http / https )</li>
             <li>Manager - an application consisting of a single binary file</li>
             <li>Supports: Linux and MacOS</li>
             <li>Simple installation of specific versions of source packages into your projects</li>
             <li>Upgrade source packages</li>
             <li>Hold specific version of source code - so you can fix modules locally</li>
+            <li>"Freezing" source codes (sometimes it's necessary for commercial development)</li>
             <li>Simple integration into your CMake project</li>
             <li>Simple start for a new project (prepared basic structures and files)</li>
             <li>System for generating files with specific classes</li>
             <li>Included unit-tests systems</li>
+            <li>Simple publication of sources packages (github.com, bitbucket.org, gitlab.com, http/https servers)</li>
+            <li>Adding helpful tool for preparing packages for other systems: homebrew</li>
+            <li>Including tool for unit-tests</li>
         </ul>
 
         <h3>all goals - not yet implemented</h3>
         <ul>
             <li>Fast creation of microservices based on Dockerfile using C++</li>
-            <li>"Freezing" source codes (sometimes it's necessary for commercial development)</li>
-            <li>Simple publication of sources packages (github, bitbucket, gitlab, http/https servers)</li>
             <li>Adding helpful tool for generating specific classes (templates or snippets)</li>
-            <li>Adding helpful tool for unit-tests</li>
-            <li>Adding helpful tool for preparing packages for other systems: deb, brew, etc...</li>
+            <li>Adding helpful tool for preparing packages for other systems: deb, ppa, etc...</li>
             <li>Adding helpful tool for docker images</li>
             <li>Adding helpful tool for build servers</li>
             <li>Adding helpful tool with web interface for coding, building, managment</li>
@@ -256,9 +257,18 @@ At this step different files will be generated (if they don't exist), eg:
     <li>.gitignore</li>
     <li>...</li>
 </ul>
-        <a class="anchorjs-link " name="include_your_existing_package_into_wsjcpp" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
-        <h3>include your existing package into wsjcpp</h3>
-<p>Step 1. Please add "wsjcpp.yml" file with minimal content into your repository</p>
+        <a class="anchorjs-link " name="submit_source_package_into_wsjcpp" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+        <h3>Submit source packages into wsjcpp</h3>
+<p>In current time wsjcpp can work with public repository in
+    <ul>
+        <li>github.com</li>
+        <li>bibucket.org (example: <a href="https://bitbucket.org/wsjcpp/example-wsjcpp-package-bitbucket/">https://bitbucket.org/wsjcpp/example-wsjcpp-package-bitbucket/</a>)</li>
+        <li>gitlab.org (example: <a href="https://gitlab.com/wsjcpp/example-wsjcpp-package-gitlab">https://gitlab.com/wsjcpp/example-wsjcpp-package-gitlab</a>)</li>
+        <li>http(s) (example: <a href="https://wsjcpp.org/packages/example/v0.0.1/">https://wsjcpp.org/packages/example/v0.0.1/</a>)</li>
+    </ul>
+</p>
+<p>In next steps you can see that submit wsjcpp-package is easyly:</p>
+<p>Step 1. Create "wsjcpp.yml" file with minimal content (please fill fields you data) into your repository</p>
 <textarea class="cm-show-code" cm-mode="shell">
 wsjcpp_version: "v0.1.1"
 cmake_minimum_required: "3.0"
@@ -269,7 +279,7 @@ description: "Describe your package"
 issues: "https://github.com/you/package-name/issues"
 keywords:
   - "c++"
-  - "json"
+  - "keyword"
 
 repositories:
   - type: main
@@ -288,36 +298,16 @@ distribution:
     type: "source-code"
 </textarea>
 
-<p>Step 2. And add topic <br>"wsjcpp-package"</br> into github project</p>
+<p>Step 2. And add topic <br>"wsjcpp-package"</br> for github public project</p>
 
-<p>Step 3. Test your project</p>
+<p>Step 3. Test install your project</p>
 <textarea class="cm-show-code" cm-mode="shell">
-wsjcpp_version: "v0.1.1"
-cmake_minimum_required: "3.0"
-cmake_cxx_standard: "11"
-name: "you/package-name"
-version: "v0.0.0"
-description: "Describe your package"
-issues: "https://github.com/you/package-name/issues"
-keywords:
-    - "c++"
-    - "json"
-
-repositories:
-    - type: main
-    url: "https://github.com/you/package-name"
-
-authors:
-    - name: "Your Name"
-    email: "your@email.com"
-
-distribution:
-    - source-file: "src/some.h"
-    target-file: "some.h"
-    type: "source-code"
-    - source-file: "src/some.h"
-    target-file: "some.h"
-    type: "source-code"
+$ mkdir /tmp/test1
+$ cd /tmp/test1
+$ wsjcpp init .
+$ chmod +x build_simple.sh
+$ wsjcpp install https://github.com/you/package-name:master
+$ ./build_simple.sh
 </textarea>
 
         <br></br>
