@@ -40,6 +40,7 @@
             Not complete of the list. Please search compatible packages on github, gitlab, bibucket and etc..
         </div>
         <input class="form-control" type="text" id="search" placeholder="Search" aria-label="Search">
+        <small id="found_packages"></small> <small>/</small> <small id="all_packages"></small> 
         <br>
         <table class="table">
             <thead>
@@ -54,31 +55,24 @@
     </div>
 <script>
     $("#search").hide();
+
+    window.packages = []
     function showFilteredPackages(filter) {
         $('#packages_list').html('');
+        $('#all_packages').html(window.packages.length);
+        filter = filter.toLowerCase();
+        var found_packages = 0;
+
         for (var i in window.packages) {
             var pkg = window.packages[i];
             if (!pkg.name) continue;
-            var someMatch = false;
-            if (
-                pkg.name.indexOf(filter) != -1
-                || pkg.description.indexOf(filter) != -1
-                || pkg.command.indexOf(filter) != -1
-            ) {
-                someMatch = true;
-            }
+            if (pkg.fulltextsearch.indexOf(filter) == -1) continue;
             var links = [];
             for (var t in pkg.links) {
                 var lnk = pkg.links[t];
                 links.push('<a href="' + lnk.url + '" target="_blank">' + lnk.title + "</a>");
-                if (
-                    lnk.url.indexOf(filter) != -1
-                    || lnk.title.indexOf(filter) != -1
-                ) {
-                    someMatch = true;
-                }
             }
-            if (!someMatch) continue;
+            found_packages++;
             $('#packages_list').append(
                 '<tr>'
                 + '<td><strong>' + pkg.name + '</strong><br>'
@@ -87,14 +81,22 @@
                 + '</tr>'
             );
         }
+        $('#found_packages').html(found_packages);
     }
 
     $.ajax({
         url: "./wsjcpp-packages.json"
     }).done(function(r) {
-        console.log(r)
-        
-        window.packages = r;
+        for (var i in r) {
+            var pkg = r[i];
+            pkg.fulltextsearch = pkg.name + ' ' + pkg.description + ' ' + pkg.command + ' ';
+            for (var t in pkg.links) {
+                pkg.fulltextsearch += pkg.links[t].url + ' ' + pkg.links[t].title
+            }
+            pkg.fulltextsearch = pkg.fulltextsearch.toLowerCase()
+            window.packages.push(pkg);
+        }
+        // window.packages = r;
         showFilteredPackages("");
         $("#search").val("")
         $("#search").show();
