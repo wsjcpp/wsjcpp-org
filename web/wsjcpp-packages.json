@@ -1,0 +1,61 @@
+[
+    {
+        "name": "nlohmann/json",
+        "description": "JSON for Modern C++",
+        "command": "wsjcpp install https://github.com/nlohmann/json:develop",
+        "links": [
+            {
+                "url": "https://github.com/nlohmann/json",
+                "title": "Github"
+            }, 
+            {
+                "url": "https://nlohmann.github.io/json/",
+                "title": "Web Site"
+            }
+        ]
+    },
+    {
+        "name": "ReneNyffenegger/cpp-base64",
+        "description": "Base64 encoding and decoding with c++",
+        "command": "wsjcpp install https://github.com/ReneNyffenegger/cpp-base64:master",
+        "links": [
+            {
+                "url": "https://github.com/ReneNyffenegger/cpp-base64",
+                "title": "GitHub"
+            }
+        ]
+    },
+    {
+        "name": "example-wsjcpp-package-https",
+        "description": "Example package wsjcpp",
+        "command": "wsjcpp install https://wsjcpp.org/packages/example/v0.0.1/",
+        "links": [
+            {
+                "url": "https://wsjcpp.org/packages/example/v0.0.1/wsjcpp.yml",
+                "title": "wsjcpp.yml"
+            }
+        ]
+    },
+    {
+        "name": "example-wsjcpp-package-gitlab",
+        "description": "Example package wsjcpp",
+        "command": "wsjcpp install https://gitlab.com/wsjcpp/example-wsjcpp-package-gitlab:master",
+        "links": [
+            {
+                "url": "https://gitlab.com/wsjcpp/example-wsjcpp-package-gitlab",
+                "title": "GitLab"
+            }
+        ]
+    },
+    {
+        "name": "example-wsjcpp-package-bitbucket",
+        "description": "Example package wsjcpp",
+        "command": "wsjcpp install https://bitbucket.org/wsjcpp/example-wsjcpp-package-bitbucket:master",
+        "links": [
+            {
+                "url": "https://bitbucket.org/wsjcpp/example-wsjcpp-package-bitbucket/",
+                "title": "Bitbucket"
+            }
+        ]
+    }
+]

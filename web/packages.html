@@ -39,71 +39,71 @@
         <div class="alert alert-warning">
             Not complete of the list. Please search compatible packages on github, gitlab, bibucket and etc..
         </div>
-
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">nlohmann/json</h5>
-                <h6 class="card-subtitle mb-2 text-muted">JSON for Modern C++</h6>
-                <p class="card-text">
-                    <code>$ wsjcpp install https://github.com/nlohmann/json:develop</code>
-                </p>
-                <a href="https://github.com/nlohmann/json" target="_blank" class="card-link">GitHub</a>
-                <a href="https://nlohmann.github.io/json/" target="_blank" class="card-link">Web Site</a>
-            </div>
-        </div>
-        <br><br>
-
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title"> ReneNyffenegger /
-                    cpp-base64 </h5>
-                <h6 class="card-subtitle mb-2 text-muted">Base64 encoding and decoding with c++</h6>
-                <p class="card-text">
-                    <code>$ wsjcpp install https://github.com/ReneNyffenegger/cpp-base64:master</code>
-                </p>
-                <a href="https://github.com/ReneNyffenegger/cpp-base64" target="_blank" class="card-link">GitHub</a>
-            </div>
-        </div>
-
-        <br><br>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">example http/https</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Example package wsjcpp (support after v0.1.5)</h6>
-                <p class="card-text">
-                    <code>$ wsjcpp install https://wsjcpp.org/packages/example/v0.0.1/</code>
-                </p>
-                <a href="https://wsjcpp.org/packages/example/v0.0.1/" target="_blank" class="card-link">wsjcpp.yml</a>
-            </div>
-        </div>
-
-        <br><br>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">example-wsjcpp-package-gitlab</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Example package wsjcpp (support after v0.1.5)</h6>
-                <p class="card-text">
-                    <code>$ wsjcpp install https://gitlab.com/wsjcpp/example-wsjcpp-package-gitlab:master</code>
-                </p>
-                <a href="https://gitlab.com/wsjcpp/example-wsjcpp-package-gitlab" target="_blank" class="card-link">GitLab</a>
-            </div>
-        </div>
-
-        <br><br>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">example-wsjcpp-package-bitbucket</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Example package wsjcpp (support after v0.1.5)</h6>
-                <p class="card-text">
-                    <code>$ wsjcpp install https://bitbucket.org/wsjcpp/example-wsjcpp-package-bitbucket:master</code>
-                </p>
-                <a href="https://bitbucket.org/wsjcpp/example-wsjcpp-package-bitbucket/" target="_blank" class="card-link">Bitbucket</a>
-            </div>
-        </div>
-        <br><br>
-
-        
-        
+        <input class="form-control" type="text" id="search" placeholder="Search" aria-label="Search">
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name / Description</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody id="packages_list">
+            </tbody>
+        </table>
     </div>
+<script>
+    $("#search").hide();
+    function showFilteredPackages(filter) {
+        $('#packages_list').html('');
+        for (var i in window.packages) {
+            var pkg = window.packages[i];
+            if (!pkg.name) continue;
+            var someMatch = false;
+            if (
+                pkg.name.indexOf(filter) != -1
+                || pkg.description.indexOf(filter) != -1
+                || pkg.command.indexOf(filter) != -1
+            ) {
+                someMatch = true;
+            }
+            var links = [];
+            for (var t in pkg.links) {
+                var lnk = pkg.links[t];
+                links.push('<a href="' + lnk.url + '" target="_blank">' + lnk.title + "</a>");
+                if (
+                    lnk.url.indexOf(filter) != -1
+                    || lnk.title.indexOf(filter) != -1
+                ) {
+                    someMatch = true;
+                }
+            }
+            if (!someMatch) continue;
+            $('#packages_list').append(
+                '<tr>'
+                + '<td><strong>' + pkg.name + '</strong><br>'
+                + '' + pkg.description + '<br><br><code>' + pkg.command + '</code><br><br></td>'
+                + '<td>' + links.join(" | ") + '</td>'
+                + '</tr>'
+            );
+        }
+    }
+
+    $.ajax({
+        url: "./wsjcpp-packages.json"
+    }).done(function(r) {
+        console.log(r)
+        
+        window.packages = r;
+        showFilteredPackages("");
+        $("#search").val("")
+        $("#search").show();
+    })
+
+    $("#search").on( 'keyup', function() {
+        showFilteredPackages($("#search").val())
+    });
+
+</script>
 </body>
 </html>

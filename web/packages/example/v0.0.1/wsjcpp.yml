@@ -1,4 +1,4 @@
-name: "example"
+name: "example-wsjcpp-package-https"
 version: "v0.0.1"
 cmake_minimum_required: "3.0"
 cmake_cxx_standard: "11"
