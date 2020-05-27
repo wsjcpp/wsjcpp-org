@@ -16,9 +16,9 @@ keywords:
   - "c++"
 
 distribution:
-  - source-file: "src/example.cpp"
-    target-file: "example.cpp"
+  - source-file: "src/example_wsjcpp_package_https.cpp"
+    target-file: "example_wsjcpp_package_https.cpp"
     type: "source-code"
-  - source-file: "src/example.h"
-    target-file: "example.h"
+  - source-file: "src/example_wsjcpp_package_https.h"
+    target-file: "example_wsjcpp_package_https.h"
     type: "source-code"

@@ -1,20 +1,20 @@
-#include "example.h"
+#include "example_wsjcpp_package_https.h"
 
 // ---------------------------------------------------------------------
-// Example
+// ExampleWsjcppPackageHttps
 
-Example::Example() {
+ExampleWsjcppPackageHttps::ExampleWsjcppPackageHttps() {
   // nothing          
 }
 
 // ---------------------------------------------------------------------
 
-void Example::setValue(const std::string &sValue) {
+void ExampleWsjcppPackageHttps::setValue(const std::string &sValue) {
   m_sValue = sValue;
 }
 
 // ---------------------------------------------------------------------
 
-std::string Example::getValue() {
+std::string ExampleWsjcppPackageHttps::getValue() {
   return m_sValue;
 }

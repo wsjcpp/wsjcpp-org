@@ -215,10 +215,10 @@
     {
         "name": "example-wsjcpp-package-https",
         "description": "Example package wsjcpp",
-        "command": "wsjcpp install https://wsjcpp.org/packages/example/v0.0.1/",
+        "command": "wsjcpp install https://wsjcpp.org/packages/example-wsjcpp-package-https/v0.0.1/",
         "links": [
             {
-                "url": "https://wsjcpp.org/packages/example/v0.0.1/wsjcpp.yml",
+                "url": "https://wsjcpp.org/packages/example-wsjcpp-package-https/v0.0.1/wsjcpp.yml",
                 "title": "wsjcpp.yml"
             }
         ]
