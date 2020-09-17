@@ -592,61 +592,93 @@ int main () {
                 <a href="https://github.com/wsjcpp/wsjcpp/issues/37" target="_blank" class="card-link">GitHub Issue</a>
             </div>
         </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">idea: add support conan</h5>
+                <h6 class="card-subtitle mb-2 text-muted">idea</h6>
+                
+                <p class="card-text">
+                    <ul>
+                        <li>1. Push/prepare package for conan.io</li>
+                        <li>2. Install packages from conan.io</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">idea: wsjcpp clean</h5>
+                <h6 class="card-subtitle mb-2 text-muted">idea</h6>
+                <p class="card-text">
+                    read conf file wsjcpp.yml to clean section
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">idea: wsjcpp install -g "url" </h5>
+                <h6 class="card-subtitle mb-2 text-muted">idea</h6>
+                <p class="card-text">
+                    Add installation to global directory in system / or in home user directory
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">idea: wsjcpp install "git@github.com:...."</h5>
+                <h6 class="card-subtitle mb-2 text-muted">idea</h6>
+                <p class="card-text">
+                    Add support of installation packages from private repository (with credentials https/ssh/git)
+                </p>
+            </div>
+        </div>
+        <br>
 
-        <br><br>
-        
-        <h3>idea: add support conan</h3>
-        <p>1. Push/prepare package for conan.io</p>
-        <p>2. Install packages from conan.io</p>
-        <br><br>
-        <h3>idea: wsjcpp clean</h3>
-        Call the script ./clean.sh
-        <br><br>
-
-        <h3>idea: wsjcpp install -g "url" </h3>
-        Add installation to global directory in system / or in home user directory
-        <br><br>
-
-        <h3>idea: wsjcpp install "git@github.com:...." </h3>
-        Add support of installation packages from private repository (with credentials https/ssh/git)
-        <br><br>
-
-        <h3>idea: wsjcpp server-origin start</h3>
-        <p>Same "registry"</p>
-        Web server for caching/registry source packages in local network (e.g. for use within your company)
-        <div class="alert alert-warn">Not implemented yet</div>
-
-        <p>what will be included:</p>
-        <ul>
-            <li>registry source package</li>
-            <li>page of source package with infomation about tests/builds/dependencies</li>
-            <li>package search interface</li>
-            <li>feature: test build (enable/disable) - based on docker</li>
-            <li>feature: subscription about new versions (enable/disable)</li>
-            <li>feature: build/tests - logging</li>
-            <li>feature: number of package dependencies for a specific package + remote icon</li>
-            <li>feature: code-covarage</li>
-            <li>feature: doxigen or something like it</li>
-            <li>feature: find on github wsjcpp packages by tag 'wsjcpp'</li>
-        </ul>
-
-        <p>тезисы </p>
-        <p>Он же билд сервер - для проверки пакетов (на основе докера)</p>
-
-        <p>Без авторизации - просто ссылка на репозиторий (github) и версию пакета (типа wsjcpp publish link : version) - также сохраняются все файлы для дистрибьюции - запрещена повторная заливка пакета</p>
-        <p>С авторизацией (простенькая) - загружается сорс код по файлово - то что в дистрибьюции - надо проработать протокол типа заливается вначале wsjcpp.yml - потом дозаливаются все остальные файлы</p>
-        <p>Регистрация только в ручном режиме - заходим в админку и добавляем пользователя с ролью девелопер</p>
-
-        <p>Состояние сборки и тестов (если не прошли тесты и сборка то пакет дропается с сервера а состояния остаются)</p>
-        <p>Хранятся последняя версия пакета а также версии на которые ссылаются предыдущие + хранятся unit-tests - весь остальной храм удаляется</p>
-        
-        <p>Команды:</p>
-
-        <p>wsjcpp publish ссылка-на-гитхаб:бранч-или-тег</p>
-        <p>wsjcpp publish путь-до-локального-пакета</p>
-        <p>wsjcpp publish --origin ссылка-сервера-регистратора что-куда</p>
-        <p>если оригин не указан то используется дефолтный wsjcpp.org</p>
-
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">idea: wsjcpp server-origin start</h5>
+                <h6 class="card-subtitle mb-2 text-muted">idea</h6>
+                <p class="card-text">
+                    <p>Same "registry"</p>
+                    Web server for caching/registry source packages in local network (e.g. for use within your company)
+                    <p>what will be included:</p>
+                    <ul>
+                        <li>registry source package</li>
+                        <li>page of source package with infomation about tests/builds/dependencies</li>
+                        <li>package search interface</li>
+                        <li>feature: test build (enable/disable) - based on docker</li>
+                        <li>feature: subscription about new versions (enable/disable)</li>
+                        <li>feature: build/tests - logging</li>
+                        <li>feature: number of package dependencies for a specific package + remote icon</li>
+                        <li>feature: code-covarage</li>
+                        <li>feature: doxigen or something like it</li>
+                        <li>feature: find on github wsjcpp packages by tag 'wsjcpp'</li>
+                    </ul>
+            
+                    <p>тезисы </p>
+                    <p>Он же билд сервер - для проверки пакетов (на основе докера)</p>
+            
+                    <p>Без авторизации - просто ссылка на репозиторий (github) и версию пакета (типа wsjcpp publish link : version) - также сохраняются все файлы для дистрибьюции - запрещена повторная заливка пакета</p>
+                    <p>С авторизацией (простенькая) - загружается сорс код по файлово - то что в дистрибьюции - надо проработать протокол типа заливается вначале wsjcpp.yml - потом дозаливаются все остальные файлы</p>
+                    <p>Регистрация только в ручном режиме - заходим в админку и добавляем пользователя с ролью девелопер</p>
+            
+                    <p>Состояние сборки и тестов (если не прошли тесты и сборка то пакет дропается с сервера а состояния остаются)</p>
+                    <p>Хранятся последняя версия пакета а также версии на которые ссылаются предыдущие + хранятся unit-tests - весь остальной храм удаляется</p>
+                    
+                    <p>Команды:</p>
+            
+                    <p>wsjcpp publish ссылка-на-гитхаб:бранч-или-тег</p>
+                    <p>wsjcpp publish путь-до-локального-пакета</p>
+                    <p>wsjcpp publish --origin ссылка-сервера-регистратора что-куда</p>
+                    <p>если оригин не указан то используется дефолтный wsjcpp.org</p>
+                </p>
+            </div>
+        </div>
+        <br>
     </div>
     
     <!-- Yandex.Metrika counter -->
