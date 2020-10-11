@@ -15,3 +15,17 @@ $(document).ready(function() {
         cm_el.setSize('100%', height);
     }
 });
+
+function switch_menu() {
+    var el = document.getElementById('main_menu');
+    if (el.style.display === '') {
+        el.style.display = 'block';
+    } else {
+        el.style.display = '';
+    }
+}
+
+function close_menu() {
+    var el = document.getElementById('main_menu');
+    el.style.display = '';
+}
