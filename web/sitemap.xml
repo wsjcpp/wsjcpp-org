@@ -7,31 +7,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://wsjcpp.org/cpp-conferences.html</loc>
-        <lastmod>2020-09-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://wsjcpp.org/cpp-frameworks.html</loc>
-        <lastmod>2020-09-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://wsjcpp.org/cpp-managers.html</loc>
-        <lastmod>2020-09-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://wsjcpp.org/cpp-services.html</loc>
-        <lastmod>2020-09-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://wsjcpp.org/cpp-tools.html</loc>
         <lastmod>2020-09-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>

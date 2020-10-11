@@ -99,19 +99,19 @@
                 C++ Links
             </div>
             <div class="menu-item menu-more">
-                <a href="./cpp-conferences.html" onclick="close_menu()">C++ Conferences</a>
+                <a href="#cpp-managers" onclick="close_menu()">C++ Managers</a>
             </div>
             <div class="menu-item menu-more">
-                <a href="./cpp-managers.html" onclick="close_menu()">C++ Managers</a>
+                <a href="#cpp-services" onclick="close_menu()">C++ Services</a>    
             </div>
             <div class="menu-item menu-more">
-                <a href="./cpp-services.html" onclick="close_menu()">C++ Services</a>    
+                <a href="#cpp-conferences" onclick="close_menu()">C++ Conferences</a>
             </div>
             <div class="menu-item menu-more">
-                <a href="./cpp-frameworks.html" onclick="close_menu()">C++ Frameworks</a>    
+                <a href="#cpp-frameworks" onclick="close_menu()">C++ Frameworks</a>    
             </div>
             <div class="menu-item menu-more">
-                <a href="./cpp-tools.html" onclick="close_menu()">C++ Tools</a>    
+                <a href="#cpp-tools" onclick="close_menu()">C++ Tools</a>    
             </div>
             <div class="menu-skip"></div>
             <div class="menu-skip"></div>
@@ -550,45 +550,34 @@ int main () {
             <li>wsjcpp prepare homebrew - Prepare package for homebrew</li>
         </ul>
         <hr>
-        
-
-        
 
         <a class="anchorjs-link " name="ideas" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h1>Ideas</h1>
         <br>
         <div class="card0">
-            <div class="card-body">
-                <h5 class="card0-title">idea: wsjcpp prepare deb-package</h5>
-                <h6 class="card0-subtitle">idea</h6>
-                <p>Prepare folder with a deb package</p>
-            </div>
+            <h5 class="card0-title">idea: wsjcpp prepare deb-package</h5>
+            <h6 class="card0-subtitle">idea</h6>
+            <p>Prepare folder with a deb package</p>
         </div>
         <br>
         <div class="card0">
-            <div class="card-body">
-                <h5 class="card0-title">idea: wsjcpp prepare ppa-package</h5>
-                <h6 class="card0-subtitle">idea</h6>
-                <p>Prepare folder for a ppa source package</p>
-            </div>
+            <h5 class="card0-title">idea: wsjcpp prepare ppa-package</h5>
+            <h6 class="card0-subtitle">idea</h6>
+            <p>Prepare folder for a ppa source package</p>
         </div>
         <br>
         <div class="card0">
-            <div class="card-body">
-                <h5 class="card0-title">idea: wsjcpp prepare dockerfile</h5>
-                <h6 class="card0-subtitle">idea</h6>
-                <p>Prepare sample Dockerfile for you package</p>
-                <a href="https://github.com/wsjcpp/wsjcpp/issues/34" target="_blank">GitHub Issue</a>
-            </div>
+            <h5 class="card0-title">idea: wsjcpp prepare dockerfile</h5>
+            <h6 class="card0-subtitle">idea</h6>
+            <p>Prepare sample Dockerfile for you package</p>
+            <a href="https://github.com/wsjcpp/wsjcpp/issues/34" target="_blank">GitHub Issue</a>
         </div>
         <br>
         <div class="card0">
-            <div class="card-body">
-                <h5 class="card0-title">idea: wsjcpp docs generate</h5>
-                <h6 class="card0-subtitle">idea</h6>
-                <p>Scan sources and generate documentation like a doxygen</p>
-                <a href="https://github.com/wsjcpp/wsjcpp/issues/36" target="_blank">GitHub Issue</a>
-            </div>
+            <h5 class="card0-title">idea: wsjcpp docs generate</h5>
+            <h6 class="card0-subtitle">idea</h6>
+            <p>Scan sources and generate documentation like a doxygen</p>
+            <a href="https://github.com/wsjcpp/wsjcpp/issues/36" target="_blank">GitHub Issue</a>
         </div>
         <br>
         <div class="card0">
@@ -635,13 +624,11 @@ int main () {
         </div>
         <br>
         <div class="card0">
-            <div class="card-body">
-                <h5 class="card0-title">idea: wsjcpp install -g "url" </h5>
-                <h6 class="card0-subtitle">idea</h6>
-                <p>
-                    Add installation to global directory in system / or in home user directory
-                </p>
-            </div>
+            <h5 class="card0-title">idea: wsjcpp install -g "url" </h5>
+            <h6 class="card0-subtitle">idea</h6>
+            <p>
+                Add installation to global directory in system / or in home user directory
+            </p>
         </div>
         <br>
         <div class="card0">
@@ -693,7 +680,258 @@ int main () {
             </p>
             
         </div>
+        <hr>
+
+        <a class="anchorjs-link " name="cpp-managers" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+        <h1>C++ Managers</h1>
+        Such as:
+        <ul>
+            <li>C++ Library Manager</li>
+            <li>C++ Package Manager</li>
+            <li>C++ Build Manager</li>
+            <li>C++ Source Package Manager</li>
+        </ul>
+
+        <p>I once thought:</p>
+        <p>"I wanna package manager for C++ like npm/pip for comfortable management of source code modules in my C++ projects".</p>
+        <p>Then I found a few source package manager projects for C++, but they didn't suit me... and I tried to create my own.</p>
+        <p>So... if you don't like my wsjcpp, or it's not exactly what you're looking for, please look through systems developed by other authors:</p>
+
+
         <br>
+        <div class="card0">
+            <h5 class="card0-title">conan</h5>
+            <h6 class="card0-subtitle">Conan, the C/C++ Package Manager for Developers</h6>
+            <p>The open source, decentralized and multi-platform
+                package manager to create and share all your native binaries.</p>
+            <a href="https://conan.io/" target="_blank">Web Site</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">dds</h5>
+            <h6 class="card0-subtitle">A Build System and Library Manager</h6>
+            <p>dds is a modern take on build system and library dependency management for C and C++ projects. It aims to be easy to use for beginners and experts alike, and maximally discoverable.</p>
+            <a href="https://github.com/vector-of-bool/dds" target="_blank">GitHub</a>
+            <a href="https://vector-of-bool.github.io/docs/dds/index.html" target="_blank">the official documentation.</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">cpm</h5>
+            <h6 class="card0-subtitle">A C++ Package Manager based on CMake and Git.</h6>
+            <p>CPM is designed to promote small, well-tested, composable C++ modules. CPM allows you to link against multiple different versions of the same static library without symbol conflicts. You can include other C++ modules that may depend on older or newer versions of the same modules you are using. Additionally, CPM will automatically download and build C++ modules for you.</p>
+            <a href="https://github.com/iauns/cpm" target="_blank">GitHub</a>
+        </div>        
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">pacm</h5>
+            <h6 class="card0-subtitle">C++ package manager</h6>
+            <p>Pacm is your solution for a simple C++ package manager that can be embedded or redistributed with native applications.</p>
+            <a href="http://sourcey.com/pacm/" target="_blank">Web site</a>
+            <a href="https://github.com/sourcey/pacm" target="_blank">GitHub</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">spack</h5>
+            <h6 class="card0-subtitle">?</h6>
+            <p>A flexible package manager supporting multiple versions, configurations, platforms, and compilers. </p>
+            <a href="https://spack.io" target="_blank">Web site</a>
+            <a href="https://github.com/spack/spack" target="_blank">GitHub</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">buckaroo</h5>
+            <h6 class="card0-subtitle">C/C++ Package Manager</h6>
+            <p>Buckaroo is a package manager for C/C++. Buckaroo makes it easy to add modules to your project in a controlled and cross-platform way.</p>
+            <a href="http://buckaroo.pm" target="_blank">Web site</a>
+            <a href="https://github.com/LoopPerfect/buckaroo/" target="_blank">GitHub</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">hunter</h5>
+            <h6 class="card0-subtitle">C/C++ Package Manager</h6>
+            <p>CMake driven cross-platform package manager for C/C++.</p>
+            <a href="https://github.com/cpp-pm/hunter" target="_blank">GitHub</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">vcpkg</h5>
+            <h6 class="card0-subtitle">C++ Library Manager for Windows, Linux, and MacOS</h6>
+            <p>Vcpkg helps you manage C and C++ libraries on Windows, Linux and MacOS. This tool and ecosystem are constantly evolving; your involvement is vital to its success!</p>
+            <a href="https://github.com/Microsoft/vcpkg" target="_blank">GitHub</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">Nuget</h5>
+            <a href="https://docs.microsoft.com/ru-ru/nuget/guides/native-packages" target="_blank">Guide</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">DownloadProject</h5>
+            <h6 class="card0-subtitle">?</h6>
+            <p>CMake module for downloading an external project's source at configure time</p>
+            <a href="https://github.com/Crascit/DownloadProject" target="_blank">GitHub</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">cget</h5>
+            <h6 class="card0-subtitle">Cmake package retrieval.</h6>
+            <p>This can be used to download and install cmake packages.</p>
+            <a href="https://github.com/pfultz2/cget" target="_blank">GitHub</a>
+        </div>
+        
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">maiken</h5>
+            <h6 class="card0-subtitle">build tool</h6>
+            <p>Cross platform build tool for C/C++/Obj-C/C#/CUDA/opencl</p>
+            <a href="https://github.com/Dekken/maiken" target="_blank">GitHub</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">cppget</h5>
+            <h6 class="card0-subtitle">C++ package repository</h6>
+            <p>C++ package repository, stable section</p>
+            <a href="https://cppget.org/" target="_blank">Web site</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">cmake - ExternalProject</h5>
+            <h6 class="card0-subtitle">cmake module</h6>
+            <p>?</p>
+            <a href="https://cmake.org/cmake/help/v3.7/module/ExternalProject.html" target="_blank">Web site</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">build2</h5>
+            <h6 class="card0-subtitle">C++ Build Toolchain</h6>
+            <p>?</p>
+            <a href="https://build2.org/" target="_blank">Web site</a>
+        </div>
+        
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">scons</h5>
+            <h6 class="card0-subtitle">SCons is an Open Source software construction tool—that is, a next-generation build tool.</h6>
+            <p>Think of SCons as an improved, cross-platform substitute for the classic Make utility with integrated functionality similar to autoconf/automake and compiler caches such as ccache. In short, SCons is an easier, more reliable and faster way to build software.</p>
+            <a href="https://scons.org/" target="_blank">Web Site</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">ninja</h5>
+            <h6 class="card0-subtitle">C++ Build System</h6>
+            <p>Ninja is a small build system with a focus on speed. It differs from other build systems in two major respects: it is designed to have its input files generated by a higher-level build system, and it is designed to run builds as fast as possible.</p>
+            <a href="https://ninja-build.org/" target="_blank">Web site</a>
+        </div>
+        
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">conda</h5>
+            <h6 class="card0-subtitle">Package, dependency and environment management for any language</h6>
+            <p>Package, dependency and environment management for any language—Python, R, Ruby, Lua, Scala, Java, JavaScript, C/ C++, FORTRAN, and more.</p>
+            <a href="https://docs.conda.io/en/latest/" target="_blank">Web site</a>
+        </div>
+
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">wsjcpp</h5>
+            <h6 class="card0-subtitle">C++ Source Package Manager</h6>
+            <p>Yet another... C++ Source Package Manager.</p>
+            <a href="https://wsjcpp.org/" target="_blank">Web site</a>
+            <a href="https://github.com/wsjcpp/wsjcpp" target="_blank">GitHub</a>
+        </div>
+
+        <br>
+        Know more C++ managers/systems? Please create <a href="https://github.com/wsjcpp/wsjcpp-org/issues/new" target="_blank">an issue</a>.
+        <hr/>
+
+        <a class="anchorjs-link " name="cpp-services" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+        <h1>C++ Services</h1>
+        
+        <br><br>
+        <div class="card0">
+            <h5 class="card0-title">wandbox</h5>
+            <h6 class="card0-subtitle"></h6>
+            <p>Online C++ Compiler</p>
+            <a href="https://wandbox.org/" target="_blank">https://wandbox.org/</a>
+        </div>
+        <hr>
+
+        <a class="anchorjs-link " name="cpp-conferences" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+        <h1>C++ Conferences</h1>
+        Collection of C++ conferences
+        <br><br>
+        <div class="card0">
+            <h5 class="card0-title">cppcon</h5>
+            <h6 class="card0-subtitle">C++ conference</h6>
+            <p >CppCon is the annual, week-long face-to-face gathering for the entire C++ community. The conference is organized by the C++ community for the community. You will enjoy inspirational talks and a friendly atmosphere designed to help attendees learn from each other, meet interesting people, and generally have a stimulating experience. Taking place this year in Aurora, Colorado, near the Denver airport, and including multiple diverse tracks, the conference will appeal to anyone from C++ novices to experts. (c) https://cppcon.org/about/</p>
+            <a href="https://cppcon.org/" target="_blank">Web Site</a>
+        </div>
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">C++ CoreHard Spring</h5>
+            <h6 class="card0-subtitle">C++ conference</h6>
+            <p >2015 - 2020 (?)</p>
+            <a href="https://conference.corehard.by/" target="_blank">Web Site</a>
+        </div>
+        <br>
+        <div class="card0">
+            <h5 class="card0-title">C++ Russia</h5>
+            <h6 class="card0-subtitle">C++ conference</h6>
+            <p>Конференция С++ Russia — это два дня и несколько треков хардкорных технических докладов, посвященных C++: concurrency, производительность, архитектура и инфраструктурные решения — всё для того, чтобы ваш код выглядел лучше и делал больше. Конференция ориентирована на опытных разработчиков, никаких вводных докладов! </p>
+            <a href="https://cppconf.ru/" target="_blank">Web Site</a>
+        </div>
+        <br>
+        Know more C++ conferences? Please create <a href="https://github.com/wsjcpp/wsjcpp-org/issues/new" target="_blank">an issue</a>.
+        <hr>
+
+        <a class="anchorjs-link " name="cpp-frameworks" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+        <h1>C++ Frameworks</h1>
+        <div class="card0">
+            <h5 class="card0-title">Oat++</h5>
+            <h6 class="card0-subtitle">Modern Web Framework for C++ </h6>
+            <p >
+                Oat++ is the modern web framework for C++. It provides all the necessary features and components for production-grade development, including:
+
+                <ul>
+                    <li>Advanced REST controllers with request mappings and Swagger-UI annotations. See Api Controller.</li>
+                    <li>Retrofit/Feign like client. See Api Client.</li>
+                    <li>Object Mapping. See Data Transfer Object (DTO).</li>
+                    <li>Dependency Injection</li>
+                    <li>Swagger-UI. See oatpp-swagger module.</li>
+                </ul>
+
+                It is zero-dependency, easy-portable, and high-performance.
+            </p>
+            <a href="https://oatpp.io/" target="_blank" >https://oatpp.io/</a>
+        </div>
+
+        <a class="anchorjs-link " name="cpp-tools" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+        <h1>C++ Tools</h1>
+        
+        <br><br>
+        <div class="card0">
+            <h5 class="card0-title">johnmcfarlane/unformat</h5>
+            <h6 class="card0-subtitle"></h6>
+            <p>Python3 utility to generate a .clang-format file from example code-base.</p>
+            <a href="https://github.com/johnmcfarlane/unformat" target="_blank">https://github.com/johnmcfarlane/unformat</a>
+        </div>
+        <br><br>
+
     </div>
     
     <!-- Yandex.Metrika counter -->
