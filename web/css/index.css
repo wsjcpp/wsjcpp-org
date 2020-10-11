@@ -12,3 +12,25 @@ code {
     margin: 10px;
     font-weight: bold;
 }
+
+.warn {
+    color: #000000;
+    background-color: #c5b700;
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid #000000;
+}
+
+.info {
+    color: #000000;
+    background-color: #1aa4e5;
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid #000000;
+}
+
+a {
+    color: #000000;
+    text-decoration: underline;
+    font-weight: bold;
+}
