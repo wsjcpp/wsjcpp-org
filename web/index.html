@@ -46,79 +46,79 @@
         <div class="menu-content">
             <div class="menu-icon">wsjcpp</div>
             <div class="menu-item menu-info">
-                <a href="#about" onclick="close_menu()">About</a>
+                <a href="#about" onclick="open_main(); close_menu();">About</a>
             </div>
             <div class="menu-item menu-info">
-                <a href="#contacts" onclick="close_menu()">Contacts</a>
+                <a href="#contacts" onclick="open_main(); close_menu()">Contacts</a>
             </div>
             <div class="menu-item menu-info">
-                <a href="#install" onclick="close_menu()">Install</a>
+                <a href="#install" onclick="open_main(); close_menu()">Install</a>
             </div>
             <div class="menu-item menu-info">
-                <a href="#docker" onclick="close_menu()">Docker</a>
+                <a href="#docker" onclick="open_main(); close_menu()">Docker</a>
             </div>
             <div class="menu-divider">
                 Documentation    
             </div>
             <div class="menu-item menu-doc">
-                <a href="#search_packages" onclick="close_menu()">search packages</a>
+                <a href="#search_packages" onclick="open_main(); close_menu()">search packages</a>
             </div>
             <div class="menu-item menu-doc">
-                <a href="#init_new_package" onclick="close_menu()">init new package</a>
+                <a href="#init_new_package" onclick="open_main(); close_menu()">init new package</a>
             </div>
             <div class="menu-item menu-doc">
-                <a href="#submit_source_package_into_wsjcpp" onclick="close_menu()">submit package</a>
+                <a href="#submit_source_package_into_wsjcpp" onclick="open_main(); close_menu()">submit package</a>
             </div>
             <div class="menu-item menu-doc">
-                <a href="#wsjcpp_info" onclick="close_menu()">info</a>
+                <a href="#wsjcpp_info" onclick="open_main(); close_menu()">info</a>
             </div>
             <div class="menu-item menu-doc">
-                <a href="#wsjcpp_distribution" onclick="close_menu()">distribution</a>
+                <a href="#wsjcpp_distribution" onclick="open_main(); close_menu()">distribution</a>
             </div>
             <div class="menu-item menu-doc">
-                <a href="#wsjcpp_unit_tests" onclick="close_menu()">unit-tests</a>
+                <a href="#wsjcpp_unit_tests" onclick="open_main(); close_menu()">unit-tests</a>
             </div>
             <div class="menu-item menu-doc">
-                <a href="#wsjcpp_generate" onclick="close_menu()">generate</a>
+                <a href="#wsjcpp_generate" onclick="open_main(); close_menu()">generate</a>
             </div>
             <div class="menu-item menu-doc">
-                <a href="#wsjcpp_resources" onclick="close_menu()">resources</a>
+                <a href="#wsjcpp_resources" onclick="open_main(); close_menu()">resources</a>
             </div>
             <div class="menu-item menu-doc">
-                <a href="#wsjcpp_prepare" onclick="close_menu()">prepare</a>
+                <a href="#wsjcpp_prepare" onclick="open_main(); close_menu()">prepare</a>
             </div>
 
             <div class="menu-divider"></div>
             <div class="menu-item menu-more">
-                <a href="#ideas" onclick="close_menu()">Ideas</a>
+                <a href="#ideas" onclick="open_main(); close_menu()">Ideas</a>
             </div>
             <div class="menu-item menu-more">
-                <a href="./packages.html" onclick="close_menu()">Packages</a>
+                <a href="javascript:void(0);" onclick="open_packages(); close_menu();">Packages</a>
             </div>
             <div class="menu-divider">
                 C++ Links
             </div>
             <div class="menu-item menu-more">
-                <a href="#cpp-managers" onclick="close_menu()">C++ Managers</a>
+                <a href="#cpp-managers" onclick="open_main(); close_menu()">C++ Managers</a>
             </div>
             <div class="menu-item menu-more">
-                <a href="#cpp-services" onclick="close_menu()">C++ Services</a>    
+                <a href="#cpp-services" onclick="open_main(); close_menu()">C++ Services</a>    
             </div>
             <div class="menu-item menu-more">
-                <a href="#cpp-conferences" onclick="close_menu()">C++ Conferences</a>
+                <a href="#cpp-conferences" onclick="open_main(); close_menu()">C++ Conferences</a>
             </div>
             <div class="menu-item menu-more">
-                <a href="#cpp-frameworks" onclick="close_menu()">C++ Frameworks</a>    
+                <a href="#cpp-frameworks" onclick="open_main(); close_menu()">C++ Frameworks</a>    
             </div>
             <div class="menu-item menu-more">
-                <a href="#cpp-tools" onclick="close_menu()">C++ Tools</a>    
+                <a href="#cpp-tools" onclick="open_main(); close_menu()">C++ Tools</a>    
             </div>
             <div class="menu-skip"></div>
             <div class="menu-skip"></div>
         </div>
     </div>
     
-    <div class="container">
+    <div class="container" id="content_main">
         <div class="info">
             If you found some error or want append more information please add pull request in 
             <a target="_blank" href="https://github.com/wsjcpp/wsjcpp-org/">github</a> 
@@ -934,6 +934,27 @@ int main () {
 
     </div>
     
+    <div class="container" id="content_packages">
+        <h1>Packages</h1>
+        <div class="warn">
+            Not complete of the list. Please search compatible packages on github, gitlab, bibucket and etc..
+        </div>
+        <br>
+        <input type="text" id="search_package" placeholder="Search">
+        <small id="found_packages"></small> <small>/</small> <small id="all_packages"></small> 
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name / Description</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody id="packages_list">
+            </tbody>
+        </table>
+    </div>
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
