@@ -1,6 +1,6 @@
 
 // fill code mirror
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function(event) { 
     var elements = $('.cm-show-code');
     for (var i = 0; i < elements.length; i++) {
         var el = elements[i];
