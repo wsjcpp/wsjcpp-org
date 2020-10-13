@@ -91,9 +91,10 @@ function open_packages() {
         document.getElementById('search_package').value = "";
         document.getElementById('search_package').style.display = '';
     })
-
-    $("#search_package").on( 'keyup', function() {
+    
+    document.getElementById('search_package').onkeyup = function(e) {
+        console.log(e);
         showFilteredPackages($("#search_package").val())
-    });
+    }
 }
 
