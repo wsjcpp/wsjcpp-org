@@ -58,9 +58,10 @@ function showFilteredPackages(filter) {
         found_packages++;
         pkg_list.innerHTML += 
             '<tr>'
-            + '<td><strong>' + pkg.name + '</strong><br>'
-            + '' + pkg.description + '<br><br><code>' + pkg.command + '</code><br><br></td>'
-            + '<td>' + links.join(" | ") + '</td>'
+            + '<td><hr><strong>' + pkg.name + '</strong><br>'
+            + '' + pkg.description + '<br><br><div class="wsjcpp-hightlight-code">' + pkg.command + '</div><br>'
+            + 'Links: ' + links.join(" | ") + '<br><br>'
+            + '</td>'
             + '</tr>';
     }
     document.getElementById('found_packages').innerHTML = found_packages;

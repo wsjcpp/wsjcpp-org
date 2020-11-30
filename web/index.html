@@ -28,15 +28,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <link rel="manifest" href="manifest.json">
 
-    <link rel="stylesheet" href="./css/codemirror.css?ver=1"/>
     <link rel="stylesheet" href="./css/index.css?ver=1"/>
+    <link rel="stylesheet" href="./css/wsjcpp-hightlight-code.css?ver=1"/>
     <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/codemirror.js?ver=1"></script>
-    <script src="./mode/shell/shell.js?ver=1"></script>
-    <script src="./mode/cmake/cmake.js?ver=1"></script>
-    <script src="./mode/clike/clike.js?ver=1"></script>
     <script src="./js/index.js?ver=1"></script>
-    <script src="./js/hightlight-code.js?ver=1"></script>
+    <script src="./js/wsjcpp-hightlight-code.js?ver=1"></script>
 </head>
 <body>
     <div class="menu-mobile">
@@ -195,33 +191,33 @@
         <h1>Install</h1>
         <h3>MacOS: brew</h3>
 Via brew
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code shell-zsh">
 % brew tap wsjcpp/wsjcpp
 % brew install wsjcpp
-</textarea>
+</div>
 To upgrade package:
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code shell-zsh">
 % brew upgrade wsjcpp
-</textarea>
+</div>
 
 <br>
         <h3>MacOS: build from source code</h3>
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code shell-zsh">
 % brew install git-core cmake make pkg-config g++ curl-openssl
 % git clone https://github.com/wsjcpp/wsjcpp
 % cd wsjcpp/
 % ./build_simple.sh
 % sudo cp -r /tmp/wsjcpp.git /usr/local/bin/wsjcpp
-</textarea>
+</div>
 <br>
 <h3>Debian/Ubuntu: build && install from source code</h3>
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code shell-bash">
 $ sudo apt install cmake make g++ pkg-config libcurl4-openssl-dev git-core
 $ git clone https://github.com/wsjcpp/wsjcpp /tmp/wsjcpp.git
 $ cd /tmp/wsjcpp.git
 $ ./build_simple.sh
 $ sudo cp -r ./wsjcpp /usr/local/bin/wsjcpp
-</textarea>
+</div>
 <a href="https://www.youtube.com/watch?v=pOTK7MVZV7g">Look on YouTube</a>
 
 <br>
@@ -232,48 +228,49 @@ $ sudo cp -r ./wsjcpp /usr/local/bin/wsjcpp
 
         <p>Step 1. Install the latest docker into your system</p>
         <p>Step 2. Pull a container with wsjcpp</p>
-        <textarea class="cm-show-code" cm-mode="shell">$ docker pull sea5kg/wsjcpp:latest</textarea>
+        <div class="wsjcpp-hightlight-code shell-zsh">$ docker pull sea5kg/wsjcpp:latest</div>
         <br>
         <p>Step 3. Change the directory to the one containing your project (cd ~/my-project)</p>
         <p>Step 4. Run interactive command line container</p>
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code shell-bash">
 $ docker pull sea5kg/wsjcpp:latest
 $ docker run -it --rm \
     -v `pwd`/.:/root/project \
     sea5kg/wsjcpp:latest \
     bash
 root@8b93098b8a07:~/project#
-</textarea>
+</div>
         <p>Now you can use "wsjcpp" command and build/run your project</p>
         <br>
         <h3>more dependencies in docker image</h3>
         <p>If you need more deb packages and programs than the image "sea5kg/wsjcpp:latest" contains, you can install it via apt, but don't forget that after restarting the container they will be lost.</p>
         <br>
         <p>To solve this problem you need to prepare Dockerfile.dev that looks something like this:</p>
-<textarea class="cm-show-code" cm-mode="dockerfile">
+<div class="wsjcpp-hightlight-code dockerfile">
 FROM sea5kg/wsjcpp:latest
+
 # install build requiremenets
 RUN apt update && apt install -y --no-install-recommends \
     libqt5sql5-mysql \ # replace to your packages
     libqt5websockets5 \ # replace to your packages
     libqt5websockets5-dev \ # replace to your packages
     qt5-default # replace to your packages
-</textarea>
+</div>
         <br>        
         <p>Now you can use "wsjcpp" command and build/run your project</p>
         
         <p>Build your docker image:</p>
-<textarea class="cm-show-code" cm-mode="shell">$ docker build -t your-project-build:latest -f Dockerfile.dev</textarea>
+<div class="wsjcpp-hightlight-code shell-zsh">$ docker build -t your-project-build:latest -f Dockerfile.dev</div>
         <br>
         <p>Run container from your image (+ extend port):</p>
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code shell-bash">
 $ docker run -it --rm \
     -v `pwd`/.:/root/project \
     your-project-build:latest \
     -p 1234:1234 \
     bash
 root@0b93098b8a07:~/project#
-</textarea>
+</div>
 
         <a class="anchorjs-link " name="documentation" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h1>Documentation</h1>
@@ -285,20 +282,20 @@ root@0b93098b8a07:~/project#
 
         <a class="anchorjs-link " name="init_new_package" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h3>init new package</h3>
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code shell-bash">
 $ mkdir your-package-name
 $ cd your-package-name
 $ wsjcpp init .
-</textarea>
+</div>
 
 Then you need to specify several fields (or you can do it later in wsjcpp.yml):
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code text">
 Source Package Name: your-package-name
 Version: v0.0.1
 Description: Some package
 Author's Name: Some Author
 Author's Email: some@author.org
-</textarea>
+</div>
 
 At this step different files will be generated (if they don't exist), eg:
 
@@ -325,7 +322,7 @@ At this step different files will be generated (if they don't exist), eg:
 </p>
 <p>Below you can see that it is easy to submit wsjcpp-package:</p>
 <p>Step 1. Create "wsjcpp.yml" file with minimal content (please fill in the fields with your data) in your repository</p>
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code yaml">
 wsjcpp_version: "v0.1.1"
 cmake_minimum_required: "3.0"
 cmake_cxx_standard: "11"
@@ -345,6 +342,7 @@ authors:
   - name: "Your Name"
     email: "your@email.com"
 
+# files will be distributed for this package
 distribution:
   - source-file: "src/some.h"
     target-file: "some.h"
@@ -352,19 +350,19 @@ distribution:
   - source-file: "src/some.h"
     target-file: "some.h"
     type: "source-code"
-</textarea>
+</div>
 
 <p>Step 2. And add topic <br>"wsjcpp-package"</br> into your public github project</p>
 
 <p>Step 3. Test installation of your project</p>
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code shell-bash">
 $ mkdir /tmp/test1
 $ cd /tmp/test1
 $ wsjcpp init .
 $ chmod +x build_simple.sh
 $ wsjcpp install https://github.com/you/package-name:master
 $ ./build_simple.sh
-</textarea>
+</div>
 
         <br></br>
         
@@ -372,7 +370,7 @@ $ ./build_simple.sh
 
         <h3>wsjcpp info</h3>
         Information about current package. Example:
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code text">
 ===== begin: wsjcpp info =====
 Name: wsjcpp
 Version: v0.1.1
@@ -402,7 +400,7 @@ Dependencies:
     - wsjcpp-arguments:v0.1.0
 ===== end: wsjcpp info =====
 
-</textarea>
+</div>
         <br><br>
         <a class="anchorjs-link " name="wsjcpp_distribution" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h3>wsjcpp distribution</h3>
@@ -413,7 +411,7 @@ Dependencies:
             <li>wsjcpp dist remove filepath1 - remove from distribution (remove info only from wsjcpp.yml, not from filesystem)</li>
         </ul>
         Example:
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code shell-zsh">
 % wsjcpp dist list
 Distribution list:
    source-code: 'src/wsjcpp_package_manager_distribution_file.cpp' -> 'wsjcpp_package_manager_distribution_file.cpp'
@@ -426,7 +424,7 @@ Distribution list:
 Added.
 % wsjcpp dist remove src/some_file.h
 Removed.
-</textarea>
+</div>
         <br><br>
         <a class="anchorjs-link " name="wsjcpp_unit_tests" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
         <h3>wsjcpp unit-tests</h3>
@@ -439,7 +437,7 @@ Removed.
             <li>wsjcpp unit-tests enable NameTest - enable unit-test (include into build/run)</li>
         </ul>
         Example:
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code shell-zsh">
 % wsjcpp unit-tests list
 2020-04-09 11:16:18.097, 0x0x1130c1dc0 [INFO] WsjcppArgumentProcessor-list: 
 Unit Tests Cases:
@@ -450,7 +448,7 @@ Unit Tests Cases:
 % wsjcpp unit-tests create ExampleTest "Some example test"
 % wsjcpp unit-tests delete ExampleTest
 Unit Test 'ExampleTest' removed successfully.
-</textarea>
+</div>
 
     <br><br>
     <a class="anchorjs-link " name="wsjcpp_generate" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
@@ -461,23 +459,23 @@ Unit Test 'ExampleTest' removed successfully.
         <li>wsjcpp generate TemplateName ClassName - files will be generated from template and added into your CMakeLists.txt between lines '#### BEGIN_WSJCPP_APPEND' and '#### END_WSJCPP_APPEND'</li>
     </ul>
     Example:
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code shell-zsh">
 % wsjcpp generate list
 Generators: 
  - wsjcpp generate WsjcppSafeScriptingProc YouClassNameHere
  - wsjcpp generate WsjcppArgumentProcessor YouClassNameHere
 
- % wsjcpp generate WsjcppArgumentProcessor Some
- 2020-04-09 11:44:09.418, 0x0x10a3aadc0 [INFO] WsjcppSafeScriptingContext: arg1 = 'Some'
- 2020-04-09 11:44:09.420, 0x0x10a3aadc0 [INFO] WsjcppSafeScriptingProc[log_info]: 
- ======
- Generated class:
-     - ArgumentProcessorSome
- Generated files:
-     - ./src/argument_processor_some.h
-     - ./src/argument_processor_some.cpp
- ======
-</textarea>
+% wsjcpp generate WsjcppArgumentProcessor Some
+2020-04-09 11:44:09.418, 0x0x10a3aadc0 [INFO] WsjcppSafeScriptingContext: arg1 = 'Some'
+2020-04-09 11:44:09.420, 0x0x10a3aadc0 [INFO] WsjcppSafeScriptingProc[log_info]: 
+======
+Generated class:
+    - ArgumentProcessorSome
+Generated files:
+    - ./src/argument_processor_some.h
+    - ./src/argument_processor_some.cpp
+======
+</div>
         
     <br><br>
     <a class="anchorjs-link " name="wsjcpp_resources" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
@@ -490,7 +488,7 @@ Generators:
     </ul>
 
     Example:
-<textarea class="cm-show-code" cm-mode="shell">
+<div class="wsjcpp-hightlight-code shell-zsh">
 % wsjcpp res ls --more
 
 resources: 
@@ -505,13 +503,13 @@ resources:
     sha1: 
     modified: 2020-04-13 12:39:27
 
-% ./wsjcpp res rm README.md
+% wsjcpp res rm README.md
 Removed files:
 
 - ./src-resources.wsjcpp/README_md_path04c6e9.h
 - ./src-resources.wsjcpp/README_md_path04c6e9.cpp
 
-% ./wsjcpp res add README.md
+% wsjcpp res add README.md
 2020-04-09 11:44:09.418, 0x0x10a3aadc0 [INFO] WsjcppSafeScriptingContext: arg1 = 'Some'
 2020-04-09 11:44:09.420, 0x0x10a3aadc0 [INFO] WsjcppSafeScriptingProc[log_info]:
 ======
@@ -521,12 +519,12 @@ Generated files:
     - ./src/argument_processor_some.h
     - ./src/argument_processor_some.cpp
 ======
-</textarea>
+</div>
 
 <br>
 How to use resources from code:
 
-<textarea class="cm-show-code" cm-mode="clike">
+<div class="wsjcpp-hightlight-code clike">
 
 #include &lt;wsjcpp_resources_manager.h&gt;
 
@@ -543,7 +541,7 @@ int main () {
     }
     return -1;
 }
-</textarea>
+</div>
 
         <br><br>
         <a class="anchorjs-link " name="wsjcpp_prepare" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>

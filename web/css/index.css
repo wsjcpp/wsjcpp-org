@@ -1,22 +1,9 @@
 
-.CodeMirror {
-    border: 1px black solid;
-}
-
-code {
-    color: #bbb7a9;
-    background-color: #3f5a61;
-    padding: 10px;
-    border: 2px solid #999999;
-    border-radius: 2px;
-    margin: 10px;
-    font-weight: bold;
-}
-
 body {
     padding: 0px;
     margin: 0px;
     overflow-wrap: anywhere;   
+    background-color: #eee;
 }
 
 .warn {
