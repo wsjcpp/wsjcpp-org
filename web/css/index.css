@@ -176,6 +176,19 @@ a {
     color: #666;
 }
 
+.topics {
+    display: block;
+}
+
+.topic {
+    display: inline-block;
+    background-color: #00dfc3;
+    margin: 2px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 25px;
+    font-size: small;
+}
+
 @media (max-width:600px) {
     .menu {
         display: none;
