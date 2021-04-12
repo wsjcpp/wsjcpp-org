@@ -79,6 +79,9 @@
                 <a href="#wsjcpp_generate" onclick="open_main(); close_menu()">generate</a>
             </div>
             <div class="menu-item menu-doc">
+                <a href="#wsjcpp_auto_generate_files" onclick="open_main(); close_menu()">auto-generated-files</a>
+            </div>
+            <div class="menu-item menu-doc">
                 <a href="#wsjcpp_resources" onclick="open_main(); close_menu()">resources</a>
             </div>
             <div class="menu-item menu-doc">
@@ -476,6 +479,22 @@ Generated files:
     - ./src/argument_processor_some.h
     - ./src/argument_processor_some.cpp
 ======
+</div>
+
+<br><br>
+<a class="anchorjs-link " name="wsjcpp_auto_generate_files" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a>
+<h3>wsjcpp change version</h3>
+Update version in project
+<ul>
+    <li>wsjcpp change version v0.1.1 - update version for current project</li>
+</ul>
+Example config lines for wsjcpp.yaml:
+<div class="wsjcpp-hightlight-code shell-zsh">
+auto-generated-files:
+  version-file:
+    path: "./"
+    filename: "VERSION"
+    printed-format: "{MAJOR}.{MINOR}.{BUILD}"
 </div>
         
     <br><br>
